@@ -84,7 +84,7 @@ body {
 /* Seção principal */
 .hero {
     position: relative;
-    background-image: url("backinicio.jpg"); /* Fundo atualizado */
+    background-image: url("images/backinicio.jpg"); /* Fundo atualizado */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -387,4 +387,396 @@ body {
         margin-top: 20px;
         border-radius: 10px;
     }
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  padding-top: 100px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2e3130;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 60px;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-item .nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+  color: #28a745;
+}
+
+.btn-planos {
+  background-color: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.btn-planos:hover {
+  background-color: #1e7e34;
+}
+
+/* Seção História */
+.historia-section {
+  background-color: #2e3130;
+  color: white;
+  text-align: left;
+  padding: 60px 20px 50px 80px;
+}
+
+.green{
+  color:#1e7e34;
+}
+
+.historia-section h2 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.linha {
+  width: 270px;
+  height: 4px;
+  background-color: #ffff;
+  margin: 20px 0 10px 0; /* Ajusta a margem superior e inferior */
+  margin-left: 0; /* Remove o centralizado e coloca à esquerda */
+}
+
+.historia-section p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: white;
+}
+
+/* Imagem + texto */
+.imagem-texto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  gap: 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(1, 0, 0, 1.4)), url("images/espaco1.jpeg");
+}
+
+.texto {
+  max-width: 55%;
+}
+
+.arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.texto h3 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #28a745;
+}
+
+.texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+.box-verde {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin: 15px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.box-gray {
+  background-color: #2e3130;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  left: -60px;   /* encosta na borda esquerda */
+  top: -30px;    /* encosta na borda de cima */
+  width: calc(100% + 60px); /* compensa a redução causada pelo deslocamento */
+}
+
+.imagem {
+  max-width: 45%;
+  position: relative;
+}
+
+.imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Retângulos verdes decorativos */
+.imagem::before,
+.imagem::after {
+  content: "";
+  position: absolute;
+  background-color: #28a745;
+  z-index: 1;
+}
+
+.imagem::before {
+  width: 310px;
+  height: 667px;
+  top: -20px;
+  right: -70px;
+}
+
+.imagem::after {
+  width: 270px;
+  height: 270px;
+  bottom: -20px;
+  left: -20px;
+}
+
+.galeria-espaco {
+  background-color: #2e3130;
+  padding: 60px 40px;
+  color: white;
+  text-align: left;
+}
+
+.galeria-espaco h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.linha-esquerda {
+  width: 80px;
+  height: 4px;
+  background-color: white;
+  margin: 10px 0 30px 0;
+}
+
+.galeria-imagens {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.galeria-imagens img {
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos específicos para tamanhos */
+.img-retangular {
+  width: 360px;
+  height: 200px;
+}
+
+.img-quadrada {
+  width: 300px;
+  height: 300px;
+}
+
+.treinos-section {
+  background-color: #2e3130;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.titulo-verde {
+  color: white;
+  background-color: #28a745;
+  display: inline-block;
+  padding: 10px 180px 10px 40px; 
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.galeria-treinos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.galeria-treinos img {
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  object-fit: cover;
+}
+
+.galeria-treinos .retangular {
+  width: 360px;
+  height: 200px;
+}
+
+.galeria-treinos .quadrada {
+  width: 200px;
+  height: 200px;
+}
+
+.titulo-wrapper {
+  text-align: left;
+  margin-left: 60px;
+}
+
+.linha-superior,
+.linha-inferior {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.retangular {
+  width: 460px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.quadrada {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover nas imagens retangulares e quadradas */
+.retangular,
+.quadrada {
+  /* escurecer por padrão */
+  filter: brightness(0.5);
+  transition: 
+    transform 0.3s ease,   /* para o zoom */
+    filter 0.3s ease;      /* para o brilho */
+}
+
+.retangular:hover,
+.quadrada:hover {
+  /* volta ao normal e dá um leve zoom */
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+.btn-planos {
+  background-color: #28a745;
+  color: white;
+  padding: 20px 40px;      /* Mais espaçamento vertical e horizontal */
+  font-size: 20px;         /* Texto maior */
+  font-weight: bold;
+  border-radius: 8px;      /* Bordas levemente arredondadas */
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+
+.btn-planos:hover {
+  background-color: #1e7e34;
+  transform: scale(1.05);  /* Pequeno “zoom” no hover */
+}
+
+@media (max-width: 768px) {
+  .galeria-treinos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titulo-verde {
+    font-size: 24px;
+    padding: 8px 24px;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .imagem-texto {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .texto, .imagem {
+    max-width: 100%;
+  }
+
+  .texto h3 {
+    font-size: 28px;
+  }
+
+  .texto p {
+    font-size: 16px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .logo {
+    height: 50px;
+  }
 }
