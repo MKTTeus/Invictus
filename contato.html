@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <title>Contato - Invictus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="images/logoInv.png" alt="Invictus Logo" class="logo">
+      </a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="historia.html" class="nav-link">História</a></li>
+        <li class="nav-item"><a href="modalidades.html" class="nav-link">Modalidades</a></li>
+        <li class="nav-item"><a href="horarios.html" class="nav-link">Horários</a></li>
+        <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+      </ul>
+      <a href="planos.html" class="btn-planos">Planos</a>
+    </div>
+  </nav>
+
+<section class="contato-section ">
+  <div class="contato-container">
+    <div class="contato-info">
+      <h2><i class="fas fa-comments"></i> Fale com a Invictus</h2>
+      <p><i class="fas fa-map-marker-alt"></i><strong> Endereço:</strong> 450 R. Bernardino Sampaio, Taquaritinga - SP</p>
+      <p><i class="fab fa-whatsapp"></i><strong> Telefone:</strong> <a href="https://wa.me/5516997046896" target="_blank">(16) 99704-6896</a></p>
+      <p><i class="fab fa-instagram"></i><strong> Instagram:</strong> <a href="https://www.instagram.com/invictusartesmarciais" target="_blank">@invictusartesmarciais</a></p>
+      <div class="contato-mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.154556737982!2d-48.51568272574186!3d-21.406361298243634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b94baea6f0228f%3A0x8e56a9b3672187f6!2sR.%20Bernardino%20Sampaio%2C%20450%20-%20Taquaritinga%2C%20SP%2C%2015900-000!5e0!3m2!1spt-BR!2sbr!4v1717623045157!5m2!1spt-BR!2sbr"
+          width="100%" height="180" style="border:0; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.5);"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="contato-formulario">
+      <h2>Envie uma mensagem</h2>
+      <form id="formContato">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="tel" name="telefone" placeholder="Seu telefone" required id="telefone">
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  <script>
+  const telInput = document.getElementById("telefone");
+  telInput.addEventListener("input", function () {
+    let num = this.value.replace(/\D/g, '');
+    if (num.length > 11) num = num.slice(0, 11);
+    num = num.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+    this.value = num;
+  });
+
+  document.getElementById("formContato").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nome = this.nome.value;
+    const telefone = this.telefone.value;
+    const mensagem = this.mensagem.value;
+    const texto = `Olá, meu nome é ${nome}, telefone ${telefone}. Mensagem: ${mensagem}`;
+    const url = `https://wa.me/5516997046896?text=${encodeURIComponent(texto)}`;
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>
