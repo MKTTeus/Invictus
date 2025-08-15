@@ -1,0 +1,214 @@
+/*COMECO DO BASICO*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #2d2b2b;
+    color: white;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #28a745;
+    outline: none;
+  }
+
+  header {
+    background-color: #2d2b2b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #383838;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 50px;
+  }
+  .logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+  .logo span {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #28a745;
+    user-select: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+  nav ul li {
+    user-select: none;
+  }
+  nav ul li a {
+    padding: 6px 4px;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    color: #28a745;
+  }
+
+  .btn-planos {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    white-space: nowrap;
+    margin-right: 50px;
+  }
+  .btn-planos:hover,
+  .btn-planos:focus {
+    background-color: #28a745;
+    outline: none;
+    color: #1e2a11;
+  }
+
+/*FIM DO BASICO*/
+
+.title{
+  font-size: 60px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.subtitulo {
+    color: gray;
+}
+
+.destaque {
+    text-align: center;
+}
+
+.verde {
+    color: #33ad67;
+}
+
+.botoes-aula {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.botao-aula {
+    background-color: transparent;
+    border: 2px solid #33ad67;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.dias-da-semana {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.dia {
+    background-color: #3a3a3a;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.horarios {
+    text-align: center;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    color: lightgray;
+    margin-top: 20px;
+}
+
+.branco {
+    color: white;
+}
+
+.botao-aula.selecionado { 
+  background-color: #28a745; 
+  border-color: #28a745; 
+  color: white; 
+
+}
+
+.tabela-horarios { 
+  margin: 30px auto; 
+  max-width: 800px; 
+  background-color: #3a3a3a; 
+  border-radius: 10px; 
+  padding: 20px; 
+}
+
+.tabela-horarios h4 { 
+  color: #28a745; 
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+
+.tabela-horarios table {
+   width: 100%; 
+   border-collapse: collapse;
+   }
+
+.tabela-horarios th, .tabela-horarios td {
+   padding: 12px; 
+   text-align: center; 
+   border-bottom: 1px solid #555; 
+  }
+
+.tabela-horarios th {
+   background-color: #28a745;
+   color: white; 
+   font-weight: bold; 
+  }
+
+.tabela-horarios td {
+   color: white; 
+  }
+
+.tabela-horarios tr:hover {
+   background-color: #4a4a4a; 
+  }

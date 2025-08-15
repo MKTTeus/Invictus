@@ -1,0 +1,235 @@
+/*COMECO DO BASICO*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #2d2b2b;
+  color: white;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+a:hover,
+a:focus {
+  color: #28a745;
+  outline: none;
+}
+
+header {
+  background-color: #2d2b2b;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #383838;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 50px;
+}
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+.logo span {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #28a745;
+  user-select: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+}
+nav ul li {
+  user-select: none;
+}
+nav ul li a {
+  padding: 6px 4px;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #28a745;
+}
+
+.btn-planos {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+  margin-right: 50px;
+}
+.btn-planos:hover,
+.btn-planos:focus {
+  background-color: #28a745;
+  outline: none;
+  color: #1e2a11;
+}
+
+/*FIM DO BASICO*/
+
+.contato-info,
+.contato-formulario {
+  flex: 1 1 300px;
+}
+
+.contato-info h2,
+.contato-formulario h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contato-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contato-info a {
+  color: #2ecc71;
+  text-decoration: none;
+}
+
+.contato-info p {
+  margin: 10px 0;
+}
+
+.contato-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato-formulario input,
+.contato-formulario textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: white;
+  resize: none;
+}
+
+.contato-formulario button {
+  padding: 12px;
+  background-color: #2ecc71;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contato-formulario button:hover {
+  background-color: #27ae60;
+}
+
+.contato-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.contato-info h2,
+.contato-formulario h2 {
+  color: #2ecc71;
+  margin-bottom: 15px;
+}
+
+.contato-info .verde {
+  color: #58d68d;
+}
+
+.info-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.info-lista li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+.info-lista i {
+  font-size: 20px;
+  color: #58d68d;
+  margin-right: 10px;
+  width: 24px;
+  text-align: center;
+}
+
+.info-lista a {
+  color: #58d68d;
+  text-decoration: none;
+}
+
+.contato-mapa img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+  object-fit: cover;
+}
+
+
+.contato-section {
+  min-height: 100vh;
+  background-color: #111;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical */
+  align-items: center; /* horizontal */
+}
+
+
+.contato-mapa iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .contato-container {
+    flex-direction: column;
+  }
+}

@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/contato.css" />
   <script src="script.js" defer></script>
   <title>Contato - Invictus</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" class="navbar-brand">
-        <img src="images/logoInv.png" alt="Invictus Logo" class="logo">
-      </a>
-      <ul class="navbar-nav">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="historia.html" class="nav-link">História</a></li>
-        <li class="nav-item"><a href="modalidades.html" class="nav-link">Modalidades</a></li>
-        <li class="nav-item"><a href="horarios.html" class="nav-link">Horários</a></li>
-        <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
-      </ul>
-      <a href="planos.html" class="btn-planos">Planos</a>
-    </div>
-  </nav>
+  <header>
+      <div class="logo" aria-label="Logo Invictus">
+        <img src="images/logoInv.png" alt="" />
+      </div>
+      <nav aria-label="Menu de navegação principal">
+        <ul>
+          <li><a href="index.html" tabindex="0">Home</a></li>
+          <li><a href="historia.html" tabindex="0">História</a></li>
+          <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
+          <li><a href="horarios.html" tabindex="0">Horários</a></li>
+          <li><a href="contato.html" tabindex="0">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
+    </header>
 
 <section class="contato-section ">
   <div class="contato-container">
