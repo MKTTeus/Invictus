@@ -1,549 +1,340 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invictus - Academia de Artes Marciais</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invictus - Academia de Artes Marciais</title>
+  <style>
+  /* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background-color: #1b1b1b;
+  color: #f4f4f4;
+  line-height: 1.6;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1b1b1b;
-            color: white;
-            line-height: 1.6;
-        }
+/* ===== APRESENTAÇÃO ===== */
+.apresentacao {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 40px;
+  align-items: flex-start;
+}
 
-        /* Header Navigation */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            position: relative;
-        }
+.apresentacao-texto {
+  flex: 1;
+}
+.apresentacao-texto img {
+  margin: 20px 0;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  width: 60%;
+  margin: auto;
+  display: block;
+}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+/* ===== CARD ===== */
+.apresentacao-card {
+  flex: 1;
+  background-color: #2e2d2d;
+  padding: 30px;
+  border-radius: 10px;
+  height: auto;
+}
+.apresentacao-card h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.apresentacao-card span {
+  color: #33ad67;
+}
+.apresentacao-card p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+.botoes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.btn {
+  background-color: #33ad67;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
 
-        .logo img {
-            width: 50px;
-            height: 50px;
-        }
+/* ===== SEÇÃO ESPAÇO ===== */
+.espaco {
+  text-align: center;
+  padding: 60px 30px;
+}
+.espaco h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+.espaco span {
+  color: #33ad67;
+}
+.espaco-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.galeria img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.barra-verde {
+  width: 20px;
+  height: 600px;
+  background-color: #0f662f;
+  border-radius: 5px;
+}
+.quadrado{
+  background-color: #2e2d2d;
+  width: auto;
+  height: 80px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 40px;
+  align-items: flex-start;
+}
+.quadrado h2{
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.quadrado span {
+  color: #33ad67;
+}
 
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #33ad67;
-        }
+/* ===== CARROSSEL ===== */
+.fundo-carrossel {
+  background-color: #2e2d2d;
+  padding: 50px 20px;
+  margin-top: 40px;
+}
 
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-item {
-            color: #ccc;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-item:hover {
-            color: white;
-        }
-
-        .nav-item.planos {
-            background-color: #33ad67;
-            color: white;
-            border-radius: 8px;
-            padding: 0.8rem 1.5rem;
-        }
-
-        .hero-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            justify-content: space-between;
-        }
-        
-        .dias-horarios-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-top: 20px; /* desce os botões */
-        }
-
-        /* Dias da Semana - Lado direito */
-        .dias-top-container {
-            display: flex;
-            justify-content: flex-end;
-            top: 0;
-            right: 0;
-            flex-wrap: wrap;
-            max-width: 500px;
-            display: flex;
-            gap: 0.5rem;
-            position: static; /* remove posição absoluta */
-            margin-bottom: 1rem;
-            margin-top: 20px; /* empurra para baixo */
-        }
-
-        .dias-top-container.visible {
-            display: flex;
-        }
-
-        .dia-btn {
-            background-color: #2a5a3a;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            min-width: auto; /* deixa compacto */
-        }
-
-        .dia-btn.active {
-            background-color: #33ad67;
-        }
-
-        .dia-btn.available {
-            background-color: #33ad67;
-        }
-
-        .dia-btn.unavailable {
-            background-color: #444;
-            color: #888;
-            cursor: not-allowed;
-        }
-
-        /* Main Content */
-        .container {
-            padding: 0 2rem 2rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            display: flex;
-            align-items: flex-start; /* evita alinhamento vertical automático */
-            gap: 2rem; /* espaço entre as colunas */
-        }
-        
-        .hero {
-            text-align: left;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero p {
-            color: #888;
-            font-size: 1.2rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 400;
-            margin-top: 2rem;
-        }
-        
-        .section-title.bold {
-            font-weight: 700;
-        }
-
-        .highlight-text {
-            color: #33ad67;
-        }
-
-        /* Layout Principal */
-        .main-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 3rem;
-            margin-top: 2rem;
-            position: relative;
-        }
-
-        .left-section {
-            flex: 2;
-        }
-
-        .right-section {
-            flex: 1;
-            position: relative;
-        }
-
-        /* Aula Desejada Section */
-        .aula-section {
-            margin-bottom: 3rem;
-        }
-
-        .aula-buttons {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            max-width: 600px;
-        }
-
-        .aula-btn {
-            background: transparent;
-            color: white;
-            border: 2px solid #33ad67;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .aula-btn:hover {
-            background-color: #33ad67;
-        }
-
-        .aula-btn.active {
-            background-color: #33ad67;
-        }
-
-        /* Horários - Abaixo dos dias */
-        .horarios-container {
-            position: static; /* agora segue o fluxo */
-            top: 60px;
-            right: 0;
-            transition: all 0.3s ease;
-            max-width: 220px;
-            width: 100%;
-            display: flex;
-            justify-content: center; /* centraliza horizontalmente */
-            align-items: center; /* centraliza verticalmente */
-            min-height: 220px; /* altura mínima para alinhar melhor */
-            flex-direction: column;
-        }
-
-        .horario-card {
-            background-color: #33ad67;
-            padding: 0.5rem 0;
-            border-radius: 8px;
-            min-width: 200px;
-            text-align: center;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-
-        .horario-item {
-            background-color: #000;
-            color: white;
-            padding: 0.8rem 1rem;
-            margin: 0.3rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .horario-item:first-child {
-            margin-top: 0.8rem;
-        }
-
-        .horario-item:last-child {
-            margin-bottom: 0.8rem;
-        }
-
-        /* Footer Text */
-        .footer-text {
-            text-align: center;
-            color: #888;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-top: 8rem;
-            padding-top: 2rem;
-        }
-
-        .footer-text .highlight {
-            color: white;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .nav-menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
-            .dias-top-container {
-                flex-wrap: wrap;
-                padding: 1rem;
-            }
-
-            .container {
-                padding: 0 1rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .main-content {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .aula-buttons {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-            }
-
-            .horarios-container {
-                position: relative;
-                top: auto;
-                right: auto;
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-            }
-        }
-    </style>
+.carrossel-fotos {
+  text-align: center;
+}
+.carrossel-fotos h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+.carrossel-fotos span {
+  color: #33ad67;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+.carousel img {
+  width: 220px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 10px;
+  opacity: 0.4;
+  filter: brightness(60%);
+  transition: transform 0.5s, opacity 0.5s, filter 0.5s;
+}
+.carousel img.active {
+  width: 380px;
+  height: 300px;
+  transform: scale(1.05);
+  opacity: 1;
+  filter: brightness(100%);
+  z-index: 2;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+.arrow.left {
+  left: 0;
+}
+.arrow.right {
+  right: 0;
+}
+  </style>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <div class="header">
-        <div class="logo">
-            <div class="logo-text">🥊 InVictus</div>
-        </div>
-        <nav class="nav-menu">
-            <a href="#" class="nav-item">Home</a>
-            <a href="#" class="nav-item">História</a>
-            <a href="#" class="nav-item">Modalidades</a>
-            <a href="#" class="nav-item">Horários</a>
-            <a href="#" class="nav-item">Contato</a>
-            <a href="#" class="nav-item planos">Planos</a>
-        </nav>
+
+  <!-- ===== SEÇÃO APRESENTAÇÃO ===== -->
+  <section class="apresentacao">
+    <!-- CARD À ESQUERDA -->
+    <div class="apresentacao-card">
+      <h2>Nossa <span>história</span></h2>
+      <p>
+        Na Invictus, acreditamos que a luta vai além do físico. Trabalhamos valores como disciplina, respeito, confiança e superação pessoal.  
+        Nosso foco não está apenas em títulos ou medalhas, mas no crescimento individual e no impacto positivo que as artes marciais geram na vida de cada praticante.  
+        Seja para melhorar seu condicionamento, aprender defesa pessoal ou se preparar para competir, a Invictus é o seu lugar.  
+        Junte-se a nós e descubra a força que existe dentro de você.
+      </p>
+      <br><br><br><br>
+      <div class="botoes">
+        <a href="#" class="btn">Espaço</a>
+        <a href="#" class="btn">Treinos</a>
+        <a href="#" class="btn">Modalidades</a>
+      </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Hero Section -->
-        <!-- Hero Section -->
-<div class="hero">
-    <div class="hero-header">
-        <h1>Invictus</h1>
-        <div class="dias-horarios-container">
-            <!-- Dias da semana -->
-            <div class="dias-top-container">
-                <button class="dia-btn" data-dia="segunda">Segunda</button>
-                <button class="dia-btn" data-dia="terca">Terça</button>
-                <button class="dia-btn" data-dia="quarta">Quarta</button>
-                <button class="dia-btn" data-dia="quinta">Quinta</button>
-                <button class="dia-btn" data-dia="sexta">Sexta</button>
-            </div>
-            <!-- Horários -->
-            <div class="horarios-container">
-                <div class="horario-card" id="horarios-display" style="display: none;">
-                    <div id="horarios-content"></div>
-                </div>
-            </div>
-        </div>
+    <!-- TEXTO + IMAGEM À DIREITA -->
+    <div class="apresentacao-texto">
+      <div class="quadrado">
+        <h2>Venha nos <span>conhecer</span></h2>
+      </div>
+      <br>
+      <p>
+        Há anos moldando campeões dentro e fora do tatame, a Invictus Team é referência no universo das lutas. Localizada em Taquaritinga, oferecemos treinos de qualidade com uma equipe comprometida, infraestrutura completa, ambiente seguro e acolhedor.
+      </p>
+      <p>
+        Aqui, você encontra aulas de Muay Thai, Boxe Chinês, Jiu–Jitsu e Defesa Pessoal, com instrutores experientes que respeitam o ritmo, os objetivos e o estilo de cada aluno.
+      </p>
+      <br>
+      <img src="images/Galeria1.jpeg" alt="Equipe Invictus">
     </div>
-    <p>Veja o melhor horário para você</p>
-</div>
+  </section>
 
-        <!-- Title Section -->
-        <h2 class="section-title">Escolha o dia da semana</h2>
-        <h2 class="section-title bold highlight-text">para você treinar</h2>
+  <!-- ===== SEÇÃO ESPAÇO ===== -->
+  <section class="espaco">
+    <h2>Conheça nosso <br><span>espaço de treino</span></h2>
 
-        <!-- Layout Principal -->
-        <div class="main-content">
-            <div class="left-section">
-                <!-- Aula Desejada -->
-                <div class="aula-section">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 400;">Aula desejada</h3>
-                    <div class="aula-buttons">
-                        <button class="aula-btn" data-modalidade="muay-thai-kids">Muay Thai - Kids</button>
-                        <button class="aula-btn" data-modalidade="muay-thai-misto">Muay Thai - Misto</button>
-                        <button class="aula-btn" data-modalidade="muay-thai-feminino">Muay Thai - Feminino</button>
-                        <button class="aula-btn" data-modalidade="jiu-jitsu">Jiu Jitsu</button>
-                        <button class="aula-btn" data-modalidade="individual">Individual</button>
-                        <div></div> <!-- Espaço vazio para manter o grid 3x2 -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="right-section">
-                <!-- Espaço reservado para os dias e horários que agora estão no hero -->
-            </div>
-        </div>
-
-        <!-- Footer Text -->
-        <p class="footer-text">
-            Nossas aulas têm um tempo de uma hora, o tempo ideal para você conseguir 
-            <span class="highlight">executar seu treino</span> e não desgastar seu corpo
-        </p>
+    <div class="espaco-container">
+      <div class="barra-verde"></div>
+      <div class="galeria">
+        <img src="images/espaco1.jpeg" alt="Espaço Invictus">
+        <img src="images/espaco2.jpeg" alt="Espaço Invictus">
+        <img src="images/espaco3.jpeg" alt="Espaço Invictus">
+        <img src="images/espaco4.jpeg" alt="Espaço Invictus">
+      </div>
+      <div class="barra-verde"></div>
     </div>
+  </section>
 
-    <script>
-        // Dados dos horários por modalidade e dia
-        const horarios = {
-            'muay-thai-kids': {
-                segunda: ['16H00 - Muay Thai - Kids'],
-                terca: ['16H00 - Muay Thai - Kids'],
-                quarta: ['16H00 - Muay Thai - Kids'],
-                quinta: ['16H00 - Muay Thai - Kids'],
-                sexta: ['16H00 - Muay Thai - Kids']
-            },
-            'muay-thai-misto': {
-                segunda: ['07H00 - Muay Thai - Misto', '10H00 - Muay Thai - Misto', '19H00 - Muay Thai - Misto'],
-                terca: ['07H00 - Muay Thai - Misto', '10H00 - Muay Thai - Misto', '19H00 - Muay Thai - Misto'],
-                quarta: ['07H00 - Muay Thai - Misto', '10H00 - Muay Thai - Misto', '19H00 - Muay Thai - Misto'],
-                quinta: ['07H00 - Muay Thai - Misto', '10H00 - Muay Thai - Misto', '19H00 - Muay Thai - Misto'],
-                sexta: ['07H00 - Muay Thai - Misto', '10H00 - Muay Thai - Misto', '19H00 - Muay Thai - Misto']
-            },
-            'muay-thai-feminino': {
-                segunda: ['18H00 - Muay Thai - Feminino'],
-                quarta: ['18H00 - Muay Thai - Feminino'],
-                sexta: ['18H00 - Muay Thai - Feminino']
-            },
-            'jiu-jitsu': {
-                segunda: ['20H00 - Jiu Jitsu'],
-                quarta: ['20H00 - Jiu Jitsu'],
-                sexta: ['20H00 - Jiu Jitsu']
-            },
-            'individual': {
-                segunda: ['Horário flexível - Individual'],
-                terca: ['Horário flexível - Individual'],
-                quarta: ['Horário flexível - Individual'],
-                quinta: ['Horário flexível - Individual'],
-                sexta: ['Horário flexível - Individual']
-            }
-        };
+  <!-- ===== SEÇÃO CARROSSEL ===== -->
+  <div class="fundo-carrossel">
+    <section class="carrossel-fotos">
+      <h2>Veja as fotos tiradas em nossas <span>aulas</span></h2>
+      <div class="carousel">
+        <button class="arrow left">&#10094;</button>
+        <div class="carousel-track">
+          <img src="images/Galeria1.jpeg" alt="Aula 1">
+          <img src="images/Galeria2.jpeg" alt="Aula 2">
+          <img src="images/Galeria3.jpeg" alt="Aula 3">
+          <img src="images/Galeria4.jpeg" alt="Aula 4">
+          <img src="images/Galeria5.jpeg" alt="Aula 5">
+          <img src="images/Galeria6.jpeg" alt="Aula 6">
+          <img src="images/Galeria7.jpeg" alt="Aula 7">
+        </div>
+        <button class="arrow right">&#10095;</button>
+      </div>
+    </section>
+  </div>
 
-        let modalidadeSelecionada = null;
-        let diaSelecionado = null;
+  <script>
+  // ===== SCRIPT DO CARROSSEL FLUIDO =====
+  const track = document.querySelector('.carousel-track');
+  const images = Array.from(track.children);
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
 
-        // Elementos DOM
-        const aulaBtns = document.querySelectorAll('.aula-btn');
-        const diaBtns = document.querySelectorAll('.dia-btn');
-        const horariosDisplay = document.getElementById('horarios-display');
-        const horariosContent = document.getElementById('horarios-content');
-        const diasContainer = document.querySelector('.dias-top-container');
+  let currentIndex = 0;
+  let imgWidth = 260;
+  let isTransitioning = false;
 
-        // Event listeners para botões de modalidade
-        aulaBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active de todos os botões
-                aulaBtns.forEach(b => b.classList.remove('active'));
-                // Adiciona active ao botão clicado
-                btn.classList.add('active');
-                
-                modalidadeSelecionada = btn.dataset.modalidade;
-                atualizarDiasDisponiveis();
-                
-                // Reset dia selecionado
-                diaSelecionado = null;
-                diaBtns.forEach(b => b.classList.remove('active'));
-                horariosDisplay.style.display = 'none';
-                
-                // Mostra os dias da semana ao lado do título
-                const diasContainer = document.querySelector('.dias-top-container');
-                diasContainer.classList.add('visible');
-                
-                // Mostra automaticamente os horários da primeira opção disponível
-                setTimeout(() => {
-                    const diasDisponiveis = Object.keys(horarios[modalidadeSelecionada]);
-                    if (diasDisponiveis.length > 0) {
-                        const primeiroDia = diasDisponiveis[0];
-                        const primeiroBtnDia = document.querySelector(`[data-dia="${primeiroDia}"]`);
-                        if (primeiroBtnDia && !primeiroBtnDia.classList.contains('unavailable')) {
-                            primeiroBtnDia.click();
-                        }
-                    }
-                }, 300);
-            });
-        });
+  // Duplicar imagens para efeito infinito
+  track.innerHTML += track.innerHTML;
+  const allImages = Array.from(track.children);
 
-        // Event listeners para botões de dia
-        diaBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (!modalidadeSelecionada || btn.classList.contains('unavailable')) {
-                    return;
-                }
-                
-                // Remove active de todos os botões de dia
-                diaBtns.forEach(b => b.classList.remove('active'));
-                // Adiciona active ao botão clicado
-                btn.classList.add('active');
-                
-                diaSelecionado = btn.dataset.dia;
-                mostrarHorarios();
-            });
-        });
+  function setPosition() {
+    track.style.transform = `translateX(${-imgWidth * currentIndex + 300}px)`;
+  }
 
-        function atualizarDiasDisponiveis() {
-            if (!modalidadeSelecionada) return;
-            
-            const diasDisponiveis = Object.keys(horarios[modalidadeSelecionada]);
-            
-            diaBtns.forEach(btn => {
-                const dia = btn.dataset.dia;
-                btn.classList.remove('available', 'unavailable');
-                
-                if (diasDisponiveis.includes(dia)) {
-                    btn.classList.add('available');
-                    btn.style.cursor = 'pointer';
-                } else {
-                    btn.classList.add('unavailable');
-                    btn.style.cursor = 'not-allowed';
-                }
-            });
-        }
+  function updateActive() {
+    allImages.forEach(img => img.classList.remove('active'));
+    let middleIndex = currentIndex % images.length;
+    if (middleIndex < 0) middleIndex = images.length - 1;
+    allImages.forEach((img, i) => {
+      if (i % images.length === middleIndex) img.classList.add('active');
+    });
+  }
 
-        function mostrarHorarios() {
-            if (!modalidadeSelecionada || !diaSelecionado) return;
-            
-            const horariosParaDia = horarios[modalidadeSelecionada][diaSelecionado];
-            
-            if (horariosParaDia) {
-                horariosContent.innerHTML = '';
-                horariosParaDia.forEach(horario => {
-                    const horarioDiv = document.createElement('div');
-                    horarioDiv.className = 'horario-item';
-                    horarioDiv.textContent = horario;
-                    horariosContent.appendChild(horarioDiv);
-                });
-                
-                horariosDisplay.style.display = 'block';
-            }
-        }
+  function moveToNext() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex++;
+    track.style.transition = "transform 0.6s ease-in-out";
+    setPosition();
+  }
 
-        // Inicialização - todos os dias começam indisponíveis
-        diaBtns.forEach(btn => {
-            btn.classList.add('unavailable');
-        });
-    </script>
+  function moveToPrev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex--;
+    track.style.transition = "transform 0.6s ease-in-out";
+    setPosition();
+  }
+
+  track.addEventListener("transitionend", () => {
+    if (currentIndex >= allImages.length - images.length) {
+      track.style.transition = "none";
+      currentIndex = currentIndex % images.length;
+      setPosition();
+    } else if (currentIndex < 0) {
+      track.style.transition = "none";
+      currentIndex = allImages.length - images.length + currentIndex;
+      setPosition();
+    }
+    updateActive();
+    isTransitioning = false;
+  });
+
+  leftArrow.addEventListener('click', moveToPrev);
+  rightArrow.addEventListener('click', moveToNext);
+
+  // inicialização
+  setPosition();
+  updateActive();
+  </script>
+
 </body>
 </html>

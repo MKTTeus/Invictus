@@ -1,100 +1,101 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invictus - Nossa História</title>
-  <link rel="stylesheet" href="styles/style.css" />
-  <link rel="icon" href="images/logoInv.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invictus</title>
+    <link rel="icon" href="images/LOGOSite.png" />
+    <link rel="stylesheet" href="styles/historia.css">
+    <script src="script.js"></script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-        <a href="#" class="navbar-brand">
-            <img src="images/logoInv.png" alt="Invictus Logo" class="logo">
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="historia.html" class="nav-link">História</a></li>
-            <li class="nav-item"><a href="modalidades.html" class="nav-link">Modalidades</a></li>
-            <li class="nav-item"><a href="horarios.html" class="nav-link">Horários</a></li>
-            <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
-        </ul>
-        <a href="planos.html" class="btn-planos">Planos</a>
-    </div>
-</nav>
-
-  <section class="historia-section green">
-    <h2>História</h2>
-    <p>Venha conhecer nossa história</p>
-  </section>
-
-  <section class="imagem-texto">
-    <div class="texto">
-      <h3 class="box-gray">Invictus Team – Onde vencedores são forjados</h3>
-      <p class="arial">Há anos moldando campeões dentro e fora do
-        tatame, a Invictus Team é referência no universo
-        das lutas. Localizada em Taquaritinga, oferecemos
-        treinos de qualidade com uma equipe
-        comprometida, infraestrutura completa, ambiente
-        seguro e acolhedor.</p>
-
-      <div class="box-verde">
-        <p class="arial">Aqui, você encontra aulas de Muay Thai, Boxe Chinês,
-          Jiu-Jitsu e Defesa Pessoal, com instrutores experientes
-          que respeitam o ritmo, os objetivos e o estilo de cada
-          aluno.</p>
+    <header>
+      <div class="logo" aria-label="Logo Invictus">
+        <img src="images/logoInv.png" alt="" />
       </div>
+      <nav aria-label="Menu de navegação principal">
+        <ul>
+          <li><a href="index.html" tabindex="0">Home</a></li>
+          <li><a href="historia.html" tabindex="0">História</a></li>
+          <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
+          <li><a href="horarios.html" tabindex="0">Horários</a></li>
+          <li><a href="contato.html" tabindex="0">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
+    </header>
 
-      <p class="arial">Na Invictus, acreditamos que a luta vai além do
-        físico. Trabalhamos valores como disciplina,
-        respeito, confiança e superação pessoal. </p>
-
-      <p class="arial">Nosso foco não está apenas em títulos ou
-        medalhas, mas no crescimento individual e no
-        impacto positivo que as artes marciais geram na
-        vida de cada praticante.</p>
-
-      <p class="arial">Seja para melhorar seu condicionamento, aprender
-        defesa pessoal ou se preparar para competir, a
-        Invictus é o seu lugar. Junte-se a nós e descubra a
-        força que existe dentro de você.</p>
+    <!-- ===== SEÇÃO APRESENTAÇÃO ===== -->
+  <section class="apresentacao">
+    <!-- CARD À ESQUERDA -->
+    <div class="apresentacao-card">
+      <h2>Nossa <span>história</span></h2>
+      <p>
+        Na Invictus, acreditamos que a luta vai além do físico. Trabalhamos valores como disciplina, respeito, confiança e superação pessoal.  
+        Nosso foco não está apenas em títulos ou medalhas, mas no crescimento individual e no impacto positivo que as artes marciais geram na vida de cada praticante.  
+        Seja para melhorar seu condicionamento, aprender defesa pessoal ou se preparar para competir, a Invictus é o seu lugar.  
+        Junte-se a nós e descubra a força que existe dentro de você.
+      </p>
+      <br><br><br><br>
+      <div class="botoes">
+        <a href="#" class="btn">Espaço</a>
+        <a href="#" class="btn">Treinos</a>
+        <a href="#" class="btn">Modalidades</a>
+      </div>
     </div>
-    
-    <div class="imagem">
-      <img src="images/Galeria8.jpeg" alt="Imagem da academia ou treino">
+
+    <!-- TEXTO + IMAGEM À DIREITA -->
+    <div class="apresentacao-texto">
+      <div class="quadrado">
+        <h2>Venha nos <span>conhecer</span></h2>
+      </div>
+      <br>
+      <p>
+        Há anos moldando campeões dentro e fora do tatame, a Invictus Team é referência no universo das lutas. Localizada em Taquaritinga, oferecemos treinos de qualidade com uma equipe comprometida, infraestrutura completa, ambiente seguro e acolhedor.
+      </p>
+      <p>
+        Aqui, você encontra aulas de Muay Thai, Boxe Chinês, Jiu–Jitsu e Defesa Pessoal, com instrutores experientes que respeitam o ritmo, os objetivos e o estilo de cada aluno.
+      </p>
+      <br>
+      <img src="images/Galeria1.jpeg" alt="Equipe Invictus">
     </div>
   </section>
 
-  <section class="galeria-espaco">
-    <h2>Conheça nosso espaço de treino</h2>
-    <div class="linha-esquerda"></div>
-    <div class="galeria-imagens">
-      <img src="images/espaco2.jpeg" alt="Espaço 1" class="img-retangular">
-      <img src="images/espaco4.jpeg" alt="Espaço 2" class="img-quadrada">
-      <img src="images/espaco3.jpeg" alt="Espaço 3" class="img-retangular">
+  <!-- ===== SEÇÃO ESPAÇO ===== -->
+  <section class="espaco">
+    <h2>Conheça nosso <br><span>espaço de treino</span></h2>
+
+    <div class="espaco-container">
+      <div class="barra-verde"></div>
+      <div class="galeria">
+        <img src="images/espaco1.jpeg" alt="Espaço Invictus">
+        <img src="images/espaco2.jpeg" alt="Espaço Invictus">
+        <img src="images/espaco3.jpeg" alt="Espaço Invictus">
+        <img src="images/espaco4.jpeg" alt="Espaço Invictus">
+      </div>
+      <div class="barra-verde"></div>
     </div>
   </section>
-  
-  <section class="treinos-section">
-    <div class="titulo-wrapper">
-      <h2 class="titulo-verde">Nossos treinos</h2>
-    </div>
 
-    <div class="linha-superior">
-      <img src="images/Galeria1.jpeg" alt="Treino 1" class="retangular">
-      <img src="images/Galeria6.jpeg" alt="Treino 2" class="retangular">
-    </div>
-
-    <div class="linha-inferior">
-      <img src="images/Galeria3.jpeg" alt="Treino 3" class="quadrada">
-      <img src="images/Galeria7.jpeg" alt="Treino 4" class="retangular">
-      <img src="images/Galeria5.jpeg" alt="Treino 5" class="quadrada">
-    </div>
-    
-    <section class="btn-planos-section">
-      <a href="planos.html" class="btn-planos">Ver Planos</a>
+  <!-- ===== SEÇÃO CARROSSEL ===== -->
+  <div class="fundo-carrossel">
+    <section class="carrossel-fotos">
+      <h2>Veja as fotos tiradas em nossas <span>aulas</span></h2>
+      <div class="carousel">
+        <button class="arrow left">&#10094;</button>
+        <div class="carousel-track">
+          <img src="images/Galeria1.jpeg" alt="Aula 1">
+          <img src="images/Galeria2.jpeg" alt="Aula 2">
+          <img src="images/Galeria3.jpeg" alt="Aula 3">
+          <img src="images/Galeria4.jpeg" alt="Aula 4">
+          <img src="images/Galeria5.jpeg" alt="Aula 5">
+          <img src="images/Galeria6.jpeg" alt="Aula 6">
+          <img src="images/Galeria7.jpeg" alt="Aula 7">
+        </div>
+        <button class="arrow right">&#10095;</button>
+      </div>
     </section>
-    
+  </div>
+
 </body>
 </html>

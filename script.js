@@ -59,31 +59,28 @@ const horariosModalidades = {
     'muay-thai-kids': {
         nome: 'Muay Thai - Kids',
         horarios: {
-            'Segunda': ['16:00', '17:00'],
-            'Terça': ['16:00'],
-            'Quarta': ['16:00', '17:00'],
-            'Quinta': ['16:00'],
-            'Sexta': ['16:00']
+            'Terça': ['17:00'],
+            'Quinta': ['17:00'],
         }
     },
     'muay-thai-misto': {
         nome: 'Muay Thai - Misto',
         horarios: {
-            'Segunda': ['19:00', '20:00'],
-            'Terça': ['19:00'],
-            'Quarta': ['19:00', '20:00'],
-            'Quinta': ['19:00'],
-            'Sexta': ['19:00', '20:00']
+            'Segunda': ['07:00', '08:00', '16:00', '18:00'],
+            'Terça': ['07:00', '08:00', '16:00', '18:00'],
+            'Quarta': ['07:00', '08:00', '16:00', '18:00'],
+            'Quinta': ['07:00', '08:00', '16:00', '18:00'],
+            'Sexta': ['07:00', '08:00', '16:00', '18:00']
         }
     },
     'muay-thai-feminino': {
         nome: 'Muay Thai - Feminino',
         horarios: {
-            'Segunda': ['18:00'],
-            'Terça': ['18:00', '19:30'],
-            'Quarta': ['18:00'],
-            'Quinta': ['18:00', '19:30'],
-            'Sexta': ['18:00']
+            'Segunda': ['09:00', '15:00', '17:00', '19:00'],
+            'Terça': ['15:00', '19:00'],
+            'Quarta': ['09:00', '15:00', '17:00', '19:00'],
+            'Quinta': ['09:00', '15:00', '19:00'],
+            'Sexta': ['09:00', '15:00', '17:00', '19:00']
         }
     },
     'jiu-jitsu': {
@@ -177,3 +174,114 @@ document.addEventListener('DOMContentLoaded', function() {
     //     selecionarModalidade(primeiroBot ao, modalidade);
     // }
 });
+
+//PLANOS
+document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll(".plan-tab");
+      const slider = document.querySelector(".slider");
+      const panels = document.querySelectorAll(".panel");
+
+      let activeIndex = 0;
+
+      function switchTo(index) {
+        // move o carrossel para o painel desejado
+        slider.style.transform = `translateX(-${index * 100}%)`;
+
+        // atualiza estados visuais/ARIA das abas e painéis
+        tabs.forEach((tab, i) => {
+          const isActive = i === index;
+          tab.classList.toggle("active", isActive);
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          tab.tabIndex = isActive ? 0 : -1;
+          panels[i].setAttribute("aria-hidden", isActive ? "false" : "true");
+        });
+
+        activeIndex = index;
+      }
+
+      // clique + teclado nas abas
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => switchTo(i));
+        tab.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            switchTo((activeIndex + 1) % tabs.length);
+          } else if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            switchTo((activeIndex - 1 + tabs.length) % tabs.length);
+          } else if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            switchTo(i);
+          }
+        });
+      });
+
+      // inicia no primeiro painel
+      switchTo(0);
+    });
+
+//HISTÓRIA
+
+// ===== SCRIPT DO CARROSSEL FLUIDO =====
+const track = document.querySelector('.carousel-track');
+const images = Array.from(track.children);
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
+
+let currentIndex = 0;
+let imgWidth = 240;
+let isTransitioning = false;
+
+// Duplicar imagens para efeito infinito
+track.innerHTML += track.innerHTML;
+const allImages = Array.from(track.children);
+
+function setPosition() {
+  track.style.transform = `translateX(${-imgWidth * currentIndex}px)`; // removido +300
+}
+
+function updateActive() {
+  allImages.forEach(img => img.classList.remove('active'));
+  let middleIndex = currentIndex % images.length;
+  if (middleIndex < 0) middleIndex = images.length - 1;
+  allImages.forEach((img, i) => {
+    if (i % images.length === middleIndex) img.classList.add('active');
+  });
+}
+
+function moveToNext() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentIndex++;
+  track.style.transition = "transform 0.6s ease-in-out";
+  setPosition();
+}
+
+function moveToPrev() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentIndex--;
+  track.style.transition = "transform 0.6s ease-in-out";
+  setPosition();
+}
+
+track.addEventListener("transitionend", () => {
+  if (currentIndex >= allImages.length - images.length) {
+    track.style.transition = "none";
+    currentIndex = currentIndex % images.length;
+    setPosition();
+  } else if (currentIndex < 0) {
+    track.style.transition = "none";
+    currentIndex = allImages.length - images.length + currentIndex;
+    setPosition();
+  }
+  updateActive();
+  isTransitioning = false;
+});
+
+leftArrow.addEventListener('click', moveToPrev);
+rightArrow.addEventListener('click', moveToNext);
+
+// inicialização
+setPosition();
+updateActive();
