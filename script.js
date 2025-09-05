@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector(".nav");
+      if (hamburger && nav) {
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("open");
+          hamburger.setAttribute("aria-expanded", nav.classList.contains("open") ? "true" : "false");
+        });
+    }
+});
+
+//MODALIDADES
 function toggleCard(card) {
     const content = card.querySelector(".conteudo");
     if (content.style.display === "block") {
@@ -23,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+ //CONTATO
 document.addEventListener("DOMContentLoaded", () => {
   const telefoneInput = document.getElementById("telefone");
   const form = document.getElementById("form-contato");
@@ -37,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     telefoneInput.value = value;
   });
 
- 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const nome = document.getElementById("nome").value.trim();
@@ -222,66 +234,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //HISTÓRIA
 
-// ===== SCRIPT DO CARROSSEL FLUIDO =====
-const track = document.querySelector('.carousel-track');
-const images = Array.from(track.children);
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
+// ===== SCRIPT DO CARROSSEL INFINITO =====
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector('.carousel-track');
+  const images = Array.from(track.children);
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
 
-let currentIndex = 0;
-let imgWidth = 240;
-let isTransitioning = false;
+  let currentIndex = 0;
+  let imgWidth = images[0].getBoundingClientRect().width + 20;
+  let isTransitioning = false;
 
-// Duplicar imagens para efeito infinito
-track.innerHTML += track.innerHTML;
-const allImages = Array.from(track.children);
+  // Duplicar imagens para efeito infinito
+  track.innerHTML += track.innerHTML;
+  const allImages = Array.from(track.children);
 
-function setPosition() {
-  track.style.transform = `translateX(${-imgWidth * currentIndex}px)`; // removido +300
-}
+  function setPosition() {
+    track.style.transform = `translateX(${-imgWidth * currentIndex}px)`;
+  }
 
-function updateActive() {
-  allImages.forEach(img => img.classList.remove('active'));
-  let middleIndex = currentIndex % images.length;
-  if (middleIndex < 0) middleIndex = images.length - 1;
-  allImages.forEach((img, i) => {
-    if (i % images.length === middleIndex) img.classList.add('active');
-  });
-}
+  function updateActive() {
+    allImages.forEach(img => img.classList.remove('active'));
+    let middleIndex = currentIndex % images.length;
+    if (middleIndex < 0) middleIndex = images.length - 1;
+    allImages.forEach((img, i) => {
+      if (i % images.length === middleIndex) img.classList.add('active');
+    });
+  }
 
-function moveToNext() {
-  if (isTransitioning) return;
-  isTransitioning = true;
-  currentIndex++;
-  track.style.transition = "transform 0.6s ease-in-out";
-  setPosition();
-}
-
-function moveToPrev() {
-  if (isTransitioning) return;
-  isTransitioning = true;
-  currentIndex--;
-  track.style.transition = "transform 0.6s ease-in-out";
-  setPosition();
-}
-
-track.addEventListener("transitionend", () => {
-  if (currentIndex >= allImages.length - images.length) {
-    track.style.transition = "none";
-    currentIndex = currentIndex % images.length;
-    setPosition();
-  } else if (currentIndex < 0) {
-    track.style.transition = "none";
-    currentIndex = allImages.length - images.length + currentIndex;
+  function moveToNext() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex++;
+    track.style.transition = "transform 0.5s ease";
     setPosition();
   }
+
+  function moveToPrev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex--;
+    track.style.transition = "transform 0.5s ease";
+    setPosition();
+  }
+
+  track.addEventListener("transitionend", () => {
+    if (currentIndex >= allImages.length - images.length) {
+      track.style.transition = "none";
+      currentIndex = currentIndex % images.length;
+      setPosition();
+    } else if (currentIndex < 0) {
+      track.style.transition = "none";
+      currentIndex = allImages.length - images.length + currentIndex;
+      setPosition();
+    }
+    updateActive();
+    isTransitioning = false;
+  });
+
+  leftArrow.addEventListener('click', moveToPrev);
+  rightArrow.addEventListener('click', moveToNext);
+
+  // inicialização
+  setPosition();
   updateActive();
-  isTransitioning = false;
 });
-
-leftArrow.addEventListener('click', moveToPrev);
-rightArrow.addEventListener('click', moveToNext);
-
-// inicialização
-setPosition();
-updateActive();

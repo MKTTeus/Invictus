@@ -1,79 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="styles/contato.css" />
-  <script src="script.js" defer></script>
-  <link rel="icon" href="images/LOGOSite.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato - Invictus</title>
+  <link rel="icon" href="images/LOGOSite.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/contato.css">
+  <script src="scripts/contato.js" defer></script>
 </head>
 <body>
   <header>
-      <div class="logo" aria-label="Logo Invictus">
-        <img src="images/logoInv.png" alt="" />
+    <div class="logo"><img src="images/logoInv.png" alt="Logo Invictus"></div>
+
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div style="display:flex; align-items:center;">
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
       </div>
-      <nav aria-label="Menu de navegação principal">
-        <ul>
-          <li><a href="index.html" tabindex="0">Home</a></li>
-          <li><a href="historia.html" tabindex="0">História</a></li>
-          <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
-          <li><a href="horarios.html" tabindex="0">Horários</a></li>
-          <li><a href="contato.html" tabindex="0">Contato</a></li>
-        </ul>
-      </nav>
+      <button class="btn-planos" onclick="location.href='planos.html'">Planos</button>
+    </div>
+  </header>
 
-      <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
-    </header>
+  <section class="contato-section">
+    <div class="contato-container">
+      <div class="contato-info">
+        <h2><i class="fas fa-comments"></i> Fale com a Invictus</h2>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Endereço:</strong> 450 R. Bernardino Sampaio, Taquaritinga - SP</p>
+        <p><i class="fab fa-whatsapp"></i> <strong>Telefone:</strong> <a href="https://wa.me/5516997046896" target="_blank">(16) 99704-6896</a></p>
+        <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://www.instagram.com/invictusartesmarciais" target="_blank">@invictusartesmarciais</a></p>
+        <div class="contato-mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.154556737982!2d-48.51568272574186!3d-21.406361298243634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b94baea6f0228f%3A0x8e56a9b3672187f6!2sR.%20Bernardino%20Sampaio%2C%20450%20-%20Taquaritinga%2C%20SP%2C%2015900-000!5e0!3m2!1spt-BR!2sbr!4v1717623045157!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
 
-<section class="contato-section ">
-  <div class="contato-container">
-    <div class="contato-info">
-      <h2><i class="fas fa-comments"></i> Fale com a Invictus</h2>
-      <p><i class="fas fa-map-marker-alt"></i><strong> Endereço:</strong> 450 R. Bernardino Sampaio, Taquaritinga - SP</p>
-      <p><i class="fab fa-whatsapp"></i><strong> Telefone:</strong> <a href="https://wa.me/5516997046896" target="_blank">(16) 99704-6896</a></p>
-      <p><i class="fab fa-instagram"></i><strong> Instagram:</strong> <a href="https://www.instagram.com/invictusartesmarciais" target="_blank">@invictusartesmarciais</a></p>
-      <div class="contato-mapa">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.154556737982!2d-48.51568272574186!3d-21.406361298243634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b94baea6f0228f%3A0x8e56a9b3672187f6!2sR.%20Bernardino%20Sampaio%2C%20450%20-%20Taquaritinga%2C%20SP%2C%2015900-000!5e0!3m2!1spt-BR!2sbr!4v1717623045157!5m2!1spt-BR!2sbr"
-          width="100%" height="180" style="border:0; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.5);"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <div class="contato-formulario">
+        <h2>Envie uma mensagem</h2>
+        <form id="form-contato">
+          <input type="text" id="nome" placeholder="Seu nome" required>
+          <input type="tel" id="telefone" placeholder="Seu telefone" required>
+          <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+          <button type="submit">Enviar via WhatsApp</button>
+        </form>
       </div>
     </div>
-
-    <div class="contato-formulario">
-      <h2>Envie uma mensagem</h2>
-      <form id="formContato">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="tel" name="telefone" placeholder="Seu telefone" required id="telefone">
-        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar via WhatsApp</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-  <script>
-  const telInput = document.getElementById("telefone");
-  telInput.addEventListener("input", function () {
-    let num = this.value.replace(/\D/g, '');
-    if (num.length > 11) num = num.slice(0, 11);
-    num = num.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
-    this.value = num;
-  });
-
-  document.getElementById("formContato").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const nome = this.nome.value;
-    const telefone = this.telefone.value;
-    const mensagem = this.mensagem.value;
-    const texto = `Olá, meu nome é ${nome}, telefone ${telefone}. Mensagem: ${mensagem}`;
-    const url = `https://wa.me/5516997046896?text=${encodeURIComponent(texto)}`;
-    window.open(url, "_blank");
-  });
-</script>
-
+  </section>
 </body>
 </html>

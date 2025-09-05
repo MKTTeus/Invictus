@@ -4,123 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Invictus - Modalidades</title>
-  <link rel="stylesheet" href="styles/modalidades.css" />
   <link rel="icon" href="images/LOGOSite.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/modalidades.css">
 </head>
-  <body>
-    <header>
-      <div class="logo" aria-label="Logo Invictus">
-        <img src="images/logoInv.png" alt="" />
-      </div>
-      <nav aria-label="Menu de navegação principal">
-        <ul>
-          <li><a href="index.html" tabindex="0">Home</a></li>
-          <li><a href="historia.html" tabindex="0">História</a></li>
-          <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
-          <li><a href="horarios.html" tabindex="0">Horários</a></li>
-          <li><a href="contato.html" tabindex="0">Contato</a></li>
-        </ul>
-      </nav>
-      <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
-    </header>
-  
-    <main>
-      <div class="content-wrapper" role="main" aria-labelledby="main-title">
-        <section class="text-block">
-          <h1 id="main-title" aria-live="polite" aria-atomic="true">
-            VENHA CONHECER<br />AS NOSSAS <span class="highlight">AULAS</span>
-          </h1>
-  
-          <div class="modalities-list" aria-label="Lista das modalidades de aula disponíveis">
-            <div class="modality-badge" tabindex="0" aria-describedby="modality-boxe-desc">
-              <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.19c.785 0 1.535-.41 1.938-1.127l3.19-5.212A1.498 1.498 0 0 0 16 5H8zm0 2h8a1.5 1.5 0 0 1 1.267.698l-2.87 4.685A.502.502 0 0 1 14.19 9H8V4zm-3 12v-2H3v6c1.81 0 3.388-1.41 3.497-3.203L5 16zm14-2h-5v2h3v3h-3v2h5v-7z"/></svg>
-              <span id="modality-boxe-desc">Boxe Chines</span>
-            </div>
-  
-            <div class="modality-badge" tabindex="0" aria-describedby="modality-jiu-desc">
-              <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15 3a6 6 0 0 1 0 12h-2a3 3 0 0 1 0-6h2a1 1 0 0 0 0-2h-2a5 5 0 1 0 0 10h2a7 7 0 1 0 0-14h-2a5 5 0 1 0 0 10h2a1 1 0 0 0 0-2h-2a3 3 0 0 1 0-6h2z"/></svg>
-              <span id="modality-jiu-desc">Jiu-Jitsu</span>
-            </div>
-  
-            <div class="modality-badge" tabindex="0" aria-describedby="modality-muay-desc">
-              <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M18 3H6c-1.105 0-2 .89-2 2v12c0 1.11.895 2 2 2h6l5-5V5c0-1.11-.895-2-2-2zM6 17V5h12v9h-4v4H6z"/></svg>
-              <span id="modality-muay-desc">Muay Thai</span>
-            </div>
-          </div>
-        </section>
-  
-        <section class="image-container" aria-label="Imagem destacada das aulas de luta">
-          <img src="images/modfundo.png" alt="Imagem de dois lutadores muay thai em ringue, um deles desferindo um chute alto contra o oponente" />
-          <div class="image-tagline" aria-live="polite" aria-atomic="true">As melhores aulas da região</div>
-        </section>
-      </div>
-    </main>
-  
-    <footer>
-      <p class="space">Eleve suas habilidades para o próximo nível. Tudo isso com técnica e força exemplar</p>
-      <button <a href="" aria-label="Botão para conhecer as modalidades">Venha conhecer nossas modalidades</a></button>
-    </footer>
+<body>
+  <header>
+    <div class="logo"><img src="images/logoInv.png" alt="Logo Invictus"></div>
 
-  <div class="modalidades-container">
-      <div class="card-flip">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="images/ModalidadesThai.jpeg" alt="Muay Thai">
-            <h2>Muay Thai — A Arte das Oito Armas</h2>
-            <p>Domine socos, cotoveladas, joelhadas e chutes em uma luta poderosa e completa.</p>
-          </div>
-          <div class="card-back">
-            <h2>Mais Informações</h2>
-            <p>O Muay Thai é uma arte marcial tailandesa focada em golpes potentes usando punhos, cotovelos, joelhos e canelas. Além de desenvolver força, resistência e disciplina, também oferece uma defesa pessoal extremamente eficaz. É conhecido mundialmente como uma das lutas mais eficientes e impactantes.</p>
-          </div>
-        </div>
-      </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
 
-      <div class="card-flip">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="images/ModalidesJiu.jpg" alt="Jiu Jitsu">
-            <h2>Jiu-Jitsu — A Arte Suave</h2>
-            <p>Controle, técnica e finalizações no chão. Lute com inteligência, não com força.</p>
-          </div>
-          <div class="card-back">
-            <h2>Mais Informações</h2>
-            <p>O Jiu-Jitsu é uma arte marcial focada em técnicas de alavancas, quedas e finalizações. Seu princípio é permitir que um praticante mais leve domine adversários mais fortes, usando técnica no lugar da força bruta. Muito utilizado no MMA e na defesa pessoal, desenvolve autocontrole, raciocínio e disciplina.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card-flip">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="images/ModalidesBoxe.jpg" alt="Boxe Chinês">
-            <h2>Boxe Chinês — Agilidade, Precisão e Impacto</h2>
-            <p>A fusão entre luta, acrobacia e eficiência marcial.</p>
-          </div>
-          <div class="card-back">
-            <h2>Mais Informações</h2>
-            <p>O Boxe Chinês, também conhecido como Sanda ou Sanshou, é uma arte marcial que mistura golpes de mãos, chutes e projeções (quedas). Desenvolve equilíbrio, agilidade, explosão e defesa pessoal. É uma luta dinâmica que une disciplina tradicional chinesa com estratégias modernas de combate.</p>
-          </div>
-        </div>
-      </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
 
-      <div class="card-flip">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="images/ModalidadesDefesa.jpg" alt="Defesa Pessoal">
-            <h2>Defesa Pessoal — Segurança e Autoconfiança</h2>
-            <p>Aprenda a se proteger em qualquer situação da vida real.</p>
-          </div>
-          <div class="card-back">
-            <h2>Mais Informações</h2>
-            <p>O treinamento de defesa pessoal é focado em situações reais do dia a dia, ensinando técnicas para se livrar de agarrões, ameaças, imobilizações e até ataques armados. Mais do que golpes, é uma preparação mental e física para agir com rapidez, segurança e assertividade, seja qual for o cenário.</p>
-          </div>
+    <button class="btn-planos" onclick="location.href='planos.html'">Planos</button>
+  </header>
+
+  <main>
+    <div class="content-wrapper">
+      <section class="text-block">
+        <h1>VENHA CONHECER<br>AS NOSSAS <span class="highlight">AULAS</span></h1>
+        <div class="modalities-list">
+          <div class="modality-badge">Boxe Chinês</div>
+          <div class="modality-badge">Jiu-Jitsu</div>
+          <div class="modality-badge">Muay Thai</div>
+        </div>
+      </section>
+
+      <section class="image-container">
+        <img src="images/modfundo.png" alt="Lutadores Muay Thai em ringue">
+        <div class="image-tagline">As melhores aulas da região</div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Eleve suas habilidades para o próximo nível. Tudo isso com técnica e força exemplar</p>
+    <a href="#modalidades" class="botao">Venha conhecer nossas modalidades</a>
+  </footer>
+
+  <div id="modalidades" class="modalidades-container">
+    <!-- === CARDS DAS MODALIDADES === -->
+    <div class="card-flip">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/ModalidadesThai.jpeg" alt="Muay Thai">
+          <h2>Muay Thai — A Arte das Oito Armas</h2>
+          <p>Domine socos, cotoveladas, joelhadas e chutes em uma luta poderosa e completa.</p>
+        </div>
+        <div class="card-back">
+          <h2>Mais Informações</h2>
+          <p>O Muay Thai é uma arte marcial tailandesa focada em golpes potentes usando punhos, cotovelos, joelhos e canelas. Além de desenvolver força, resistência e disciplina, também oferece uma defesa pessoal extremamente eficaz. É conhecido mundialmente como uma das lutas mais eficientes e impactantes.</p>
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="card-flip">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/ModalidesJiu.jpg" alt="Jiu Jitsu">
+          <h2>Jiu-Jitsu — A Arte Suave</h2>
+          <p>Controle, técnica e finalizações no chão.</p>
+        </div>
+        <div class="card-back">
+          <h2>Mais Informações</h2>
+          <p>O Jiu-Jitsu é uma arte marcial focada em técnicas de alavancas, quedas e finalizações. Seu princípio é permitir que um praticante mais leve domine adversários mais fortes, usando técnica no lugar da força bruta. Muito utilizado no MMA e na defesa pessoal, desenvolve autocontrole, raciocínio e disciplina.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-flip">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/ModalidesBoxe.jpg" alt="Boxe Chinês">
+          <h2>Boxe Chinês — Agilidade, Precisão e Impacto</h2>
+          <p>A fusão entre luta, acrobacia e eficiência marcial.</p>
+        </div>
+        <div class="card-back">
+          <h2>Mais Informações</h2>
+          <p>O Boxe Chinês, também conhecido como Sanda ou Sanshou, é uma arte marcial que mistura golpes de mãos, chutes e projeções (quedas). Desenvolve equilíbrio, agilidade, explosão e defesa pessoal. É uma luta dinâmica que une disciplina tradicional chinesa com estratégias modernas de combate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-flip">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/ModalidadesDefesa.jpg" alt="Defesa Pessoal">
+          <h2>Defesa Pessoal — Segurança e Autoconfiança</h2>
+          <p>Aprenda a se proteger em qualquer situação da vida real.</p>
+        </div>
+        <div class="card-back">
+          <h2>Mais Informações</h2>
+          <p>O treinamento de defesa pessoal é focado em situações reais do dia a dia, ensinando técnicas para se livrar de agarrões, ameaças, imobilizações e até ataques armados. Mais do que golpes, é uma preparação mental e física para agir com rapidez, segurança e assertividade, seja qual for o cenário.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // === NAVBAR HAMBURGUER ===
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

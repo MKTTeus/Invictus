@@ -1,133 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invictus</title>
-    <link rel="icon" href="images/LOGOSite.png" />
-    <link rel="stylesheet" href="styles/planos.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invictus - Planos</title>
+  <link rel="icon" href="images/LOGOSite.png">
+  <link rel="stylesheet" href="styles/planos.css">
+  <script src="scripts/planos.js" defer></script>
 </head>
 <body>
-    <header>
-      <div class="logo" aria-label="Logo Invictus">
-        <img src="images/logoInv.png" alt="" />
+  <header>
+    <div class="logo"><img src="images/logoInv.png" alt="Logo Invictus"></div>
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <div style="display: flex; align-items: center;">
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      <button class="btn-planos" onclick="location.href='planos.html'">Planos</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="plan-tabs" role="tablist">
+      <div class="plan-tab active" role="tab" tabindex="0" data-index="0" id="tab-muaythai" aria-controls="panel-muaythai" aria-selected="true">
+        Planos Muay thai<div class="subtitle">Aulas em grupo</div>
       </div>
-      <nav aria-label="Menu de navegação principal">
-        <ul>
-          <li><a href="index.html" tabindex="0">Home</a></li>
-          <li><a href="historia.html" tabindex="0">História</a></li>
-          <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
-          <li><a href="horarios.html" tabindex="0">Horários</a></li>
-          <li><a href="contato.html" tabindex="0">Contato</a></li>
-        </ul>
-      </nav>
-      <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
-    </header>
-     <main class="max-w-4xl mx-auto px-4">
-    <!-- ABAS -->
-      <section class="plan-tabs" role="tablist" aria-label="Seleção de planos">
-        <div class="plan-tab active" role="tab" tabindex="0" aria-selected="true" data-index="0" id="tab-muaythai" aria-controls="panel-muaythai">
-          Planos Muay thai
-          <div class="subtitle">Aulas em grupo</div>
+      <div class="plan-tab" role="tab" tabindex="-1" data-index="1" id="tab-personal" aria-controls="panel-personal" aria-selected="false">
+        Planos Personal fight<div class="subtitle">Aulas individuais</div>
+      </div>
+      <div class="plan-tab" role="tab" tabindex="-1" data-index="2" id="tab-jiujitsu" aria-controls="panel-jiujitsu" aria-selected="false">
+        Planos Jiu-jitsu<div class="subtitle">Aulas em grupo</div>
+      </div>
+    </section>
+
+    <section class="slider-wrapper">
+      <div class="slider">
+        <div class="panel" id="panel-muaythai" aria-labelledby="tab-muaythai" aria-hidden="false">
+          <article class="plan-card">
+            <h2>R$80,00</h2>
+            <div class="lessons">2 Aulas<br>Semanais</div>
+            <div class="description">Aulas duas vezes na semana para você que está começando ou quer manter o ritmo sem sobrecarregar.</div>
+          </article>
+          <article class="plan-card">
+            <h2>R$110,00</h2>
+            <div class="lessons">3 Aulas<br>Semanais</div>
+            <div class="description">O equilíbrio ideal entre evolução técnica e condicionamento físico.</div>
+          </article>
+          <article class="plan-card">
+            <h2>R$140,00</h2>
+            <div class="lessons">5 Aulas<br>Semanais</div>
+            <div class="description">Para quem busca intensidade, foco e evolução constante no treino.</div>
+          </article>
         </div>
-        <div class="plan-tab" role="tab" tabindex="-1" aria-selected="false" data-index="1" id="tab-personal" aria-controls="panel-personal">
-          Planos Personal fight
-          <div class="subtitle">Aulas individuais</div>
+
+        <div class="panel" id="panel-personal" aria-labelledby="tab-personal" aria-hidden="true">
+          <article class="plan-card">
+            <h2>R$40,00</h2>
+            <div class="lessons">1 Aula<br>Semanal</div>
+            <div class="description">Aula individual focada em seus objetivos com atenção exclusiva.</div>
+          </article>
+          <article class="plan-card">
+            <h2>R$35,00</h2>
+            <div class="lessons">2 Aulas<br>Semanais</div>
+            <div class="description">Treinamento intensivo personalizado para evolução rápida e segura.</div>
+          </article>
+          <article class="plan-card">
+            <h2>R$30,00</h2>
+            <div class="lessons">3 Aulas<br>Semanais</div>
+            <div class="description">Máxima dedicação com acompanhamento total e foco em resultados.</div>
+          </article>
         </div>
-        <div class="plan-tab" role="tab" tabindex="-1" aria-selected="false" data-index="2" id="tab-jiujitsu" aria-controls="panel-jiujitsu">
-          Planos Jiu-jitsu
-          <div class="subtitle">Aulas em grupo</div>
+
+        <div class="panel" id="panel-jiujitsu" aria-labelledby="tab-jiujitsu" aria-hidden="true">
+          <article class="plan-card">
+            <h2>R$90,00</h2>
+            <div class="lessons">2 Aulas<br>Semanais</div>
+            <div class="description">Aulas que focam no aprendizado técnico em treinamentos leves.</div>
+          </article>
         </div>
-      </section>
-
-      <!-- CARROSSEL -->
-      <section class="slider-wrapper">
-        <div class="slider">
-          <!-- Painel 1 -->
-          <div class="panel" id="panel-muaythai" aria-labelledby="tab-muaythai" aria-hidden="false">
-            <article class="plan-card">
-              <h2>R$80,00</h2>
-              <div class="lessons">2 Aulas<br>Semanais</div>
-              <div class="description">
-  Aulas duas vezes na semana para você que está começando ou quer manter o ritmo sem sobrecarregar.
-              </div>
-            </article>
-
-            <article class="plan-card">
-              <h2>R$110,00</h2>
-              <div class="lessons">3 Aulas<br>Semanais</div>
-              <div class="description">
-  O equilíbrio ideal entre evolução técnica e condicionamento físico.
-              </div>
-            </article>
-
-            <article class="plan-card">
-              <h2>R$140,00</h2>
-              <div class="lessons">5 Aulas<br>Semanais</div>
-              <div class="description">
-  Para quem busca intensidade, foco e evolução constante no treino.
-              </div>
-            </article>
-          </div>
-
-          <!-- Painel 2 -->
-          <div class="panel" id="panel-personal" aria-labelledby="tab-personal" aria-hidden="true">
-            <article class="plan-card">
-              <h2>R$40,00</h2>
-              <div class="lessons">1 Aula<br>Semanal</div>
-              <div class="description">
-  Aula individual focada em seus objetivos com atenção exclusiva.
-              </div>
-            </article>
-
-            <article class="plan-card">
-              <h2>R$35,00</h2>
-              <div class="lessons">2 Aulas<br>Semanais</div>
-              <div class="description">
-  Treinamento intensivo personalizado para evolução rápida e segura.
-              </div>
-            </article>
-
-            <article class="plan-card">
-              <h2>R$30,00</h2>
-              <div class="lessons">3 Aulas<br>Semanais</div>
-              <div class="description">
-  Máxima dedicação com acompanhamento total e foco em resultados.
-              </div>
-            </article>
-          </div>
-
-          <!-- Painel 3 -->
-          <div class="panel" id="panel-jiujitsu" aria-labelledby="tab-jiujitsu" aria-hidden="true">
-            <article class="plan-card">
-              <h2>R$90,00</h2>
-              <div class="lessons">2 Aulas<br>Semanais</div>
-              <div class="description">
-  Aulas que focam no aprendizado técnico em treinamentos leves.
-              </div>
-            </article>
-
-           <!-- <article class="plan-card">
-              <h2>R$130,00</h2>
-              <div class="lessons">4 Aulas<br>Semanais</div>
-              <div class="description">
-  Ritmo constante para um melhor desempenho na arte suave.
-              </div>
-            </article>
-
-            <article class="plan-card">
-              <h2>R$180,00</h2>
-              <div class="lessons">5 Aulas<br>Semanais</div>
-              <div class="description">
-  Intensidade elevada para atletas buscando evolução máxima.
-              </div>
-            </article>-->
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>

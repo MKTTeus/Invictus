@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invictus</title>
-    <link rel="icon" href="images/LOGOSite.png" />
-    <link rel="stylesheet" href="styles/historia.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invictus</title>
+  <link rel="icon" href="images/LOGOSite.png" />
+  <link rel="stylesheet" href="styles/historia.css">
 </head>
 <body>
-    <header>
-      <div class="logo" aria-label="Logo Invictus">
-        <img src="images/logoInv.png" alt="" />
-      </div>
-      <nav aria-label="Menu de navegação principal">
-        <ul>
-          <li><a href="index.html" tabindex="0">Home</a></li>
-          <li><a href="historia.html" tabindex="0">História</a></li>
-          <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
-          <li><a href="horarios.html" tabindex="0">Horários</a></li>
-          <li><a href="contato.html" tabindex="0">Contato</a></li>
-        </ul>
-      </nav>
-      <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
-    </header>
+  <header>
+    <div class="logo" aria-label="Logo Invictus">
+      <img src="images/logoInv.png" alt="Logo Invictus" />
+    </div>
+    <nav aria-label="Menu de navegação principal">
+      <ul>
+        <li><a href="index.html" tabindex="0">Home</a></li>
+        <li><a href="historia.html" tabindex="0">História</a></li>
+        <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
+        <li><a href="horarios.html" tabindex="0">Horários</a></li>
+        <li><a href="contato.html" tabindex="0">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
+  </header>
 
-    <!-- ===== SEÇÃO APRESENTAÇÃO ===== -->
+  <!-- ===== SEÇÃO APRESENTAÇÃO ===== -->
   <section class="apresentacao">
-    <!-- CARD À ESQUERDA -->
     <div class="apresentacao-card">
       <h2>Nossa <span>história</span></h2>
       <p>
@@ -38,13 +36,12 @@
       </p>
       <br><br><br><br>
       <div class="botoes">
-        <a href="#" class="btn">Espaço</a>
-        <a href="#" class="btn">Treinos</a>
-        <a href="#" class="btn">Modalidades</a>
+        <a href="#espaco" class="btn">Espaço</a>
+        <a href="#treinos" class="btn">Treinos</a>
+        <a href="modalidades.html" class="btn">Modalidades</a>
       </div>
     </div>
 
-    <!-- TEXTO + IMAGEM À DIREITA -->
     <div class="apresentacao-texto">
       <div class="quadrado">
         <h2>Venha nos <span>conhecer</span></h2>
@@ -62,9 +59,8 @@
   </section>
 
   <!-- ===== SEÇÃO ESPAÇO ===== -->
-  <section class="espaco">
+  <section id="espaco"class="espaco">
     <h2>Conheça nosso <br><span>espaço de treino</span></h2>
-
     <div class="espaco-container">
       <div class="barra-verde"></div>
       <div class="galeria">
@@ -78,9 +74,9 @@
   </section>
 
   <!-- ===== SEÇÃO CARROSSEL ===== -->
-  <div class="fundo-carrossel">
+  <div id="treinos" class="fundo-carrossel">
     <section class="carrossel-fotos">
-      <h2>Veja as fotos tiradas em nossas <span>aulas</span></h2>
+      <h2>Veja as fotos tiradas da nossa <span>equipe</span></h2>
       <div class="carousel">
         <button class="arrow left">&#10094;</button>
         <div class="carousel-track">
@@ -97,5 +93,7 @@
     </section>
   </div>
 
+  <!-- carregar JS no final -->
+  <script src="script.js"></script>
 </body>
 </html>

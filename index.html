@@ -6,50 +6,65 @@
     <title>Invictus</title>
     <link rel="icon" href="images/LOGOSite.png" />
     <link rel="stylesheet" href="styles/index.css">
-    <script src="script.js"></script>
 </head>
 <body>
-    <header>
-      <div class="logo" aria-label="Logo Invictus">
-        <img src="images/logoInv.png" alt="" />
+  <header>
+    <div class="logo">
+      <img src="images/logoInv.png" alt="Logo Invictus">
+    </div>
+  
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="horarios.html">Horários</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  
+    <div style="display: flex; align-items: center;">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <nav aria-label="Menu de navegação principal">
-        <ul>
-          <li><a href="index.html" tabindex="0">Home</a></li>
-          <li><a href="historia.html" tabindex="0">História</a></li>
-          <li><a href="modalidades.html" tabindex="0">Modalidades</a></li>
-          <li><a href="horarios.html" tabindex="0">Horários</a></li>
-          <li><a href="contato.html" tabindex="0">Contato</a></li>
-        </ul>
-      </nav>
-      <button class="btn-planos" onclick="location.href='planos.html'" aria-label="Ver planos e preços">Planos</button>
-    </header>
+      <button class="btn-planos" onclick="location.href='planos.html'">Planos</button>
+    </div>
+  </header>
+  
 
-    <section class="hero">
-        <div class="hero-overlay"></div> 
-        <div class="hero-content">
-            <BR><br><br><br><br><br>
-            <h1>Invictus Team</h1>
-            <p>A academia de vencedores</p><br><br><br><br><br>
-            <a href="planos.html" class="btn-matricula">Matricule-se</a>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="hero-overlay"></div> 
+    <div class="hero-content">
+      <h1>Invictus Team</h1>
+      <p>A academia de vencedores</p>
+      <a href="planos.html" class="btn-matricula">Matricule-se</a>
+    </div>
+  </section>
 
-<section class="sobre">
+  <section class="sobre">
     <div class="sobre-imagem">
-        <div class="moldura-verde">
-            <img src="images/Luta1.png" alt="Lutador" class="img-lutador">
-        </div>
+      <div class="moldura-verde">
+        <img src="images/Luta1.png" alt="Lutador" class="img-lutador">
+      </div>
     </div>
 
     <div class="sobre-conteudo">
-        <span class="destaque">Academia de Muay Thai no centro de Taquaritinga</span>
-        <h2>Muay thai é aqui na<br>Invictus Team</h2><br><br><br><br>
-        <p><strong>A Invictus Team</strong> foi fundada em 2018. Contamos com professores de alto nível para treinamento de alunos recreativos e atletas de competição. Academia de Muaythai, Boxe chinês, Jiu Jitsu e Defesa Pessoal.</p><br>
-        <a href="historia.html" class="btn-conheca">Conheça a Invictus</a>
+      <span class="destaque">Academia de Muay Thai no centro de Taquaritinga</span>
+      <h2>Muay thai é aqui na<br>Invictus Team</h2>
+      <p><strong>A Invictus Team</strong> foi fundada em 2018. Contamos com professores de alto nível para treinamento de alunos recreativos e atletas de competição. Academia de Muaythai, Boxe chinês, Jiu Jitsu e Defesa Pessoal.</p>
+      <a href="historia.html" class="btn-conheca">Conheça a Invictus</a>
     </div>
-</section>
-
-
+  </section>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>  
+  
 </body>
 </html>

@@ -1,340 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invictus - Academia de Artes Marciais</title>
-  <style>
-  /* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Trebuchet MS', Arial, sans-serif;
-  background-color: #1b1b1b;
-  color: #f4f4f4;
-  line-height: 1.6;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invictus</title>
+<link rel="icon" href="images/LOGOSite.png">
+<style>
+  /* ================= RESET ================= */
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family: 'Trebuchet MS', sans-serif; background-color:#2d2b2b; color:white; line-height:1.5; min-height:100vh; display:flex; flex-direction:column; }
+  a { text-decoration:none; color:white; transition:color 0.3s ease; }
+  a:hover, a:focus { color:#28a745; outline:none; }
 
-/* ===== APRESENTAÇÃO ===== */
-.apresentacao {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px;
-  gap: 40px;
-  align-items: flex-start;
-}
+  /* ================= HEADER / NAVBAR ================= */
+  header {
+    background-color:#2d2b2b; padding:10px 20px;
+    display:flex; align-items:center; justify-content:space-between;
+    border-bottom:1px solid #383838; position:sticky; top:0; z-index:100;
+  }
+  .logo img { height:40px; }
 
-.apresentacao-texto {
-  flex: 1;
-}
-.apresentacao-texto img {
-  margin: 20px 0;
-  max-width: 400px;
-  width: 100%;
-  border-radius: 8px;
-  width: 60%;
-  margin: auto;
-  display: block;
-}
+  nav { display:flex; align-items:center; position:relative; }
+  nav ul { display:flex; list-style:none; gap:32px; font-size:1.1rem; }
+  nav ul li a { padding:6px 4px; }
+  nav ul li a:hover, nav ul li a:focus { color:#28a745; }
+  .btn-planos { background-color:#28a745; border:none; color:white; padding:10px 20px; border-radius:8px; font-size:1.1rem; cursor:pointer; font-weight:500; transition:background-color 0.3s ease; }
+  .btn-planos:hover, .btn-planos:focus { color:#1e2a11; }
 
-/* ===== CARD ===== */
-.apresentacao-card {
-  flex: 1;
-  background-color: #2e2d2d;
-  padding: 30px;
-  border-radius: 10px;
-  height: auto;
-}
-.apresentacao-card h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-.apresentacao-card span {
-  color: #33ad67;
-}
-.apresentacao-card p {
-  font-size: 16px;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-.botoes {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-.btn {
-  background-color: #33ad67;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
+  /* Hamburger */
+  .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+  .hamburger div { width:25px; height:3px; background:white; transition:all 0.3s ease; }
 
-/* ===== SEÇÃO ESPAÇO ===== */
-.espaco {
-  text-align: center;
-  padding: 60px 30px;
-}
-.espaco h2 {
-  font-size: 30px;
-  margin-bottom: 40px;
-}
-.espaco span {
-  color: #33ad67;
-}
-.espaco-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.galeria img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.barra-verde {
-  width: 20px;
-  height: 600px;
-  background-color: #0f662f;
-  border-radius: 5px;
-}
-.quadrado{
-  background-color: #2e2d2d;
-  width: auto;
-  height: 80px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  gap: 40px;
-  align-items: flex-start;
-}
-.quadrado h2{
-  font-size: 35px;
-  margin-bottom: 20px;
-}
-.quadrado span {
-  color: #33ad67;
-}
+  /* ================= APRESENTAÇÃO ================= */
+  .apresentacao { display:flex; justify-content:space-between; padding:50px; gap:40px; align-items:flex-start; }
+  .apresentacao-card, .apresentacao-texto { flex:1; }
+  .apresentacao-card { background-color:#2e2d2d; padding:30px; border-radius:10px; }
+  .apresentacao-card h2 { font-size:40px; margin-bottom:20px; }
+  .apresentacao-card span { color:#33ad67; }
+  .apresentacao-card p { color:#ccc; margin-bottom:20px; }
+  .botoes { display:flex; gap:15px; flex-wrap:wrap; }
+  .btn { background-color:#33ad67; padding:10px 20px; border-radius:5px; color:#fff; font-weight:bold; }
+  .apresentacao-texto img { margin:20px 0; max-width:400px; width:60%; border-radius:8px; display:block; margin:auto; }
+  .quadrado { background-color:#2e2d2d; height:80px; border-radius:8px; display:flex; justify-content:space-between; align-items:flex-start; padding:10px; }
+  .quadrado h2 { font-size:35px; }
+  .quadrado span { color:#33ad67; }
 
-/* ===== CARROSSEL ===== */
-.fundo-carrossel {
-  background-color: #2e2d2d;
-  padding: 50px 20px;
-  margin-top: 40px;
-}
+  /* ================= ESPAÇO ================= */
+  .espaco { text-align:center; padding:60px 30px; }
+  .espaco h2 { font-size:30px; margin-bottom:40px; }
+  .espaco span { color:#33ad67; }
+  .espaco-container { display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; }
+  .galeria { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .galeria img { width:300px; height:300px; object-fit:cover; border-radius:8px; }
+  .barra-verde { width:20px; height:600px; background-color:#0f662f; border-radius:5px; }
 
-.carrossel-fotos {
-  text-align: center;
-}
-.carrossel-fotos h2 {
-  font-size: 30px;
-  margin-bottom: 40px;
-}
-.carrossel-fotos span {
-  color: #33ad67;
-}
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
-}
-.carousel-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
-.carousel img {
-  width: 220px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin: 0 10px;
-  opacity: 0.4;
-  filter: brightness(60%);
-  transition: transform 0.5s, opacity 0.5s, filter 0.5s;
-}
-.carousel img.active {
-  width: 380px;
-  height: 300px;
-  transform: scale(1.05);
-  opacity: 1;
-  filter: brightness(100%);
-  z-index: 2;
-}
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background-color: rgba(0,0,0,0.5);
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 2;
-}
-.arrow.left {
-  left: 0;
-}
-.arrow.right {
-  right: 0;
-}
-  </style>
+  /* ================= CARROSSEL ================= */
+  .fundo-carrossel { background-color:#4b4848; padding:50px 20px; margin-top:40px; }
+  .carrossel-fotos { text-align:center; }
+  .carrossel-fotos h2 { font-size:30px; margin-bottom:40px; }
+  .carrossel-fotos span { color:#33ad67; }
+  .carousel { position:relative; width:100%; max-width:1000px; margin:auto; overflow:hidden; }
+  .carousel-track { display:flex; transition:transform 0.6s ease-in-out; }
+  .carousel img { width:220px; height:250px; object-fit:cover; border-radius:12px; margin:0 10px; opacity:0.4; filter:brightness(60%); transition:transform 0.5s,opacity 0.5s,filter 0.5s; }
+  .carousel img.active { width:380px; height:300px; transform:scale(1.05); opacity:1; filter:brightness(100%); z-index:2; }
+  .arrow { position:absolute; top:50%; transform:translateY(-50%); font-size:2rem; background-color:rgba(0,0,0,0.5); border:none; color:white; padding:10px; cursor:pointer; z-index:2; }
+  .arrow.left { left:0; }
+  .arrow.right { right:0; }
+
+  /* ================= RESPONSIVIDADE ================= */
+  @media(max-width:768px){
+    .apresentacao { flex-direction:column; padding:20px; }
+    .apresentacao-card h2 { font-size:28px; }
+    .apresentacao-texto img { width:100%; height:auto; }
+
+    /* GALERIA ESPAÇO */
+    .espaco-container { flex-direction:column; }
+    .galeria { grid-template-columns:1fr; }
+    .barra-verde { display:none; }
+
+    /* NAVBAR HAMBURGER */
+    .hamburger { display:flex; }
+    nav ul { display:none; flex-direction:column; background-color:#2d2b2b; position:absolute; top:60px; right:20px; padding:20px; border-radius:8px; gap:10px; width:150px; }
+    nav ul.show { display:flex; }
+
+    /* CARROSSEL */
+    .carousel img { width:150px; height:150px; margin:0 5px; }
+    .carousel img.active { width:200px; height:200px; }
+  }
+</style>
 </head>
 <body>
+<header>
+  <div class="logo"><img src="images/logoInv.png" alt="Logo Invictus"></div>
 
-  <!-- ===== SEÇÃO APRESENTAÇÃO ===== -->
-  <section class="apresentacao">
-    <!-- CARD À ESQUERDA -->
-    <div class="apresentacao-card">
-      <h2>Nossa <span>história</span></h2>
-      <p>
-        Na Invictus, acreditamos que a luta vai além do físico. Trabalhamos valores como disciplina, respeito, confiança e superação pessoal.  
-        Nosso foco não está apenas em títulos ou medalhas, mas no crescimento individual e no impacto positivo que as artes marciais geram na vida de cada praticante.  
-        Seja para melhorar seu condicionamento, aprender defesa pessoal ou se preparar para competir, a Invictus é o seu lugar.  
-        Junte-se a nós e descubra a força que existe dentro de você.
-      </p>
-      <br><br><br><br>
-      <div class="botoes">
-        <a href="#" class="btn">Espaço</a>
-        <a href="#" class="btn">Treinos</a>
-        <a href="#" class="btn">Modalidades</a>
-      </div>
+  <nav>
+    <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show');">
+      <div></div><div></div><div></div>
     </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="modalidades.html">Modalidades</a></li>
+      <li><a href="horarios.html">Horários</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  <button class="btn-planos" onclick="location.href='planos.html'">Planos</button>
+</header>
 
-    <!-- TEXTO + IMAGEM À DIREITA -->
-    <div class="apresentacao-texto">
-      <div class="quadrado">
-        <h2>Venha nos <span>conhecer</span></h2>
-      </div>
-      <br>
-      <p>
-        Há anos moldando campeões dentro e fora do tatame, a Invictus Team é referência no universo das lutas. Localizada em Taquaritinga, oferecemos treinos de qualidade com uma equipe comprometida, infraestrutura completa, ambiente seguro e acolhedor.
-      </p>
-      <p>
-        Aqui, você encontra aulas de Muay Thai, Boxe Chinês, Jiu–Jitsu e Defesa Pessoal, com instrutores experientes que respeitam o ritmo, os objetivos e o estilo de cada aluno.
-      </p>
-      <br>
-      <img src="images/Galeria1.jpeg" alt="Equipe Invictus">
+<section class="apresentacao">
+  <div class="apresentacao-card">
+    <h2>Nossa <span>história</span></h2>
+    <p>Na Invictus, acreditamos que a luta vai além do físico...</p>
+    <div class="botoes">
+      <a href="#espaco" class="btn">Espaço</a>
+      <a href="#treinos" class="btn">Treinos</a>
+      <a href="modalidades.html" class="btn">Modalidades</a>
     </div>
-  </section>
-
-  <!-- ===== SEÇÃO ESPAÇO ===== -->
-  <section class="espaco">
-    <h2>Conheça nosso <br><span>espaço de treino</span></h2>
-
-    <div class="espaco-container">
-      <div class="barra-verde"></div>
-      <div class="galeria">
-        <img src="images/espaco1.jpeg" alt="Espaço Invictus">
-        <img src="images/espaco2.jpeg" alt="Espaço Invictus">
-        <img src="images/espaco3.jpeg" alt="Espaço Invictus">
-        <img src="images/espaco4.jpeg" alt="Espaço Invictus">
-      </div>
-      <div class="barra-verde"></div>
-    </div>
-  </section>
-
-  <!-- ===== SEÇÃO CARROSSEL ===== -->
-  <div class="fundo-carrossel">
-    <section class="carrossel-fotos">
-      <h2>Veja as fotos tiradas em nossas <span>aulas</span></h2>
-      <div class="carousel">
-        <button class="arrow left">&#10094;</button>
-        <div class="carousel-track">
-          <img src="images/Galeria1.jpeg" alt="Aula 1">
-          <img src="images/Galeria2.jpeg" alt="Aula 2">
-          <img src="images/Galeria3.jpeg" alt="Aula 3">
-          <img src="images/Galeria4.jpeg" alt="Aula 4">
-          <img src="images/Galeria5.jpeg" alt="Aula 5">
-          <img src="images/Galeria6.jpeg" alt="Aula 6">
-          <img src="images/Galeria7.jpeg" alt="Aula 7">
-        </div>
-        <button class="arrow right">&#10095;</button>
-      </div>
-    </section>
   </div>
+  <div class="apresentacao-texto">
+    <div class="quadrado"><h2>Venha nos <span>conhecer</span></h2></div>
+    <p>Há anos moldando campeões dentro e fora do tatame...</p>
+    <p>Aqui, você encontra aulas de Muay Thai, Boxe Chinês, Jiu–Jitsu e Defesa Pessoal...</p>
+    <img src="images/Galeria1.jpeg" alt="Equipe Invictus">
+  </div>
+</section>
 
-  <script>
-  // ===== SCRIPT DO CARROSSEL FLUIDO =====
-  const track = document.querySelector('.carousel-track');
-  const images = Array.from(track.children);
-  const leftArrow = document.querySelector('.arrow.left');
-  const rightArrow = document.querySelector('.arrow.right');
+<section id="espaco" class="espaco">
+  <h2>Conheça nosso <br><span>espaço de treino</span></h2>
+  <div class="espaco-container">
+    <div class="barra-verde"></div>
+    <div class="galeria">
+      <img src="images/espaco1.jpeg" alt="Espaço Invictus">
+      <img src="images/espaco2.jpeg" alt="Espaço Invictus">
+      <img src="images/espaco3.jpeg" alt="Espaço Invictus">
+      <img src="images/espaco4.jpeg" alt="Espaço Invictus">
+    </div>
+    <div class="barra-verde"></div>
+  </div>
+</section>
 
-  let currentIndex = 0;
-  let imgWidth = 260;
-  let isTransitioning = false;
+<div id="treinos" class="fundo-carrossel">
+  <section class="carrossel-fotos">
+    <h2>Veja as fotos tiradas da nossa <span>equipe</span></h2>
+    <div class="carousel">
+      <button class="arrow left">&#10094;</button>
+      <div class="carousel-track">
+        <img src="images/Galeria1.jpeg" alt="Aula 1">
+        <img src="images/Galeria2.jpeg" alt="Aula 2">
+        <img src="images/Galeria3.jpeg" alt="Aula 3">
+        <img src="images/Galeria4.jpeg" alt="Aula 4">
+        <img src="images/Galeria5.jpeg" alt="Aula 5">
+        <img src="images/Galeria6.jpeg" alt="Aula 6">
+        <img src="images/Galeria7.jpeg" alt="Aula 7">
+      </div>
+      <button class="arrow right">&#10095;</button>
+    </div>
+  </section>
+</div>
 
-  // Duplicar imagens para efeito infinito
-  track.innerHTML += track.innerHTML;
-  const allImages = Array.from(track.children);
+<script>
+  // CARROSSEL
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector('.carousel-track');
+    const images = Array.from(track.children);
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+    let currentIndex = 0;
+    let imgWidth = images[0].getBoundingClientRect().width + 10;
+    let isTransitioning = false;
 
-  function setPosition() {
-    track.style.transform = `translateX(${-imgWidth * currentIndex + 300}px)`;
-  }
+    track.innerHTML += track.innerHTML;
+    const allImages = Array.from(track.children);
 
-  function updateActive() {
-    allImages.forEach(img => img.classList.remove('active'));
-    let middleIndex = currentIndex % images.length;
-    if (middleIndex < 0) middleIndex = images.length - 1;
-    allImages.forEach((img, i) => {
-      if (i % images.length === middleIndex) img.classList.add('active');
-    });
-  }
-
-  function moveToNext() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex++;
-    track.style.transition = "transform 0.6s ease-in-out";
-    setPosition();
-  }
-
-  function moveToPrev() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex--;
-    track.style.transition = "transform 0.6s ease-in-out";
-    setPosition();
-  }
-
-  track.addEventListener("transitionend", () => {
-    if (currentIndex >= allImages.length - images.length) {
-      track.style.transition = "none";
-      currentIndex = currentIndex % images.length;
-      setPosition();
-    } else if (currentIndex < 0) {
-      track.style.transition = "none";
-      currentIndex = allImages.length - images.length + currentIndex;
-      setPosition();
+    function setPosition() { track.style.transform = `translateX(${-imgWidth * currentIndex}px)`; }
+    function updateActive() {
+      allImages.forEach(img => img.classList.remove('active'));
+      let middleIndex = currentIndex % images.length;
+      if (middleIndex < 0) middleIndex = images.length - 1;
+      allImages.forEach((img,i)=>{ if(i % images.length===middleIndex) img.classList.add('active'); });
     }
-    updateActive();
-    isTransitioning = false;
+
+    function moveToNext() { if(isTransitioning) return; isTransitioning=true; currentIndex++; track.style.transition="transform 0.5s ease"; setPosition(); }
+    function moveToPrev() { if(isTransitioning) return; isTransitioning=true; currentIndex--; track.style.transition="transform 0.5s ease"; setPosition(); }
+
+    track.addEventListener("transitionend",()=>{
+      if(currentIndex>=allImages.length-images.length){ track.style.transition="none"; currentIndex=currentIndex % images.length; setPosition(); }
+      else if(currentIndex<0){ track.style.transition="none"; currentIndex=allImages.length-images.length+currentIndex; setPosition(); }
+      updateActive(); isTransitioning=false;
+    });
+
+    leftArrow.addEventListener('click',moveToPrev);
+    rightArrow.addEventListener('click',moveToNext);
+
+    setPosition(); updateActive();
   });
-
-  leftArrow.addEventListener('click', moveToPrev);
-  rightArrow.addEventListener('click', moveToNext);
-
-  // inicialização
-  setPosition();
-  updateActive();
-  </script>
-
+</script>
 </body>
 </html>
