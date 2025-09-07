@@ -1,4 +1,3 @@
-    /* RESET */
     *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
@@ -21,7 +20,7 @@
       color: #f4f4f4;
       line-height: 1.6;
     }
-    /* ===== HEADER ===== */
+
     header {
       background-color: #2d2b2b;
       padding: 10px 20px;
@@ -59,7 +58,6 @@
     nav ul li a { padding: 6px 4px; }
     nav ul li a:hover, nav ul li a:focus { color: #28a745; }
 
-    /* ===== HAMBURGUER ===== */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -103,7 +101,7 @@
     }
 
 
-    /* CONTAINER HISTÓRIA + CONHECER */
+    /* ============ */
     .historia-container {
       display: flex;
       justify-content: center;
@@ -112,10 +110,9 @@
       padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
-      flex-wrap: wrap; /* Responsivo */
+      flex-wrap: wrap;
     }
 
-    /* CARD ESQUERDA (Nossa História) */
     .card-historia {
       background-color: #242424;
       padding: 30px;
@@ -124,28 +121,23 @@
       flex: 1 1 450px;
       min-width: 300px;
     }
-
     .card-historia h2 {
       font-size: 28px;
       margin-bottom: 15px;
     }
-
     .card-historia h2 span {
       color: #33ad67;
     }
-
     .card-historia p {
       font-size: 16px;
       margin-bottom: 25px;
     }
 
-    /* BOTÕES */
     .btns {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
-
     .btns a {
       background-color: #33ad67;
       color: #fff;
@@ -155,17 +147,14 @@
       font-weight: bold;
       transition: 0.3s;
     }
-
     .btns a:hover {
       background-color: #289054;
     }
 
-    /* CARD DIREITA (Venha nos conhecer) */
     .card-conhecer {
       flex: 1 1 450px;
       min-width: 300px;
     }
-
     .card-conhecer h2 {
       background-color: #242424;
       display: inline-block;
@@ -174,16 +163,13 @@
       margin-bottom: 20px;
       font-size: 24px;
     }
-
     .card-conhecer h2 span {
       color: #33ad67;
     }
-
     .card-conhecer p {
       margin-bottom: 15px;
       font-size: 16px;
     }
-
   .card-conhecer img {
     width: 100%;
     max-width: 400px; /* 🔥 limita a largura no PC */
@@ -192,23 +178,19 @@
     display: block;
     }
 
-    /* CONTAINER ESPAÇO DE TREINO */
     .espaco-container {
       text-align: center;
       padding: 50px 20px;
       background-color: rgb(19, 17, 17);
     }
-
     .espaco-container h2 {
       font-size: 28px;
       margin-bottom: 30px;
     }
-
     .espaco-container h2 span {
       color: #33ad67;
     }
 
-    /* Galeria de imagens */
     .galeria {
       display: flex;
       justify-content: center;
@@ -216,39 +198,32 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-
     .galeria img {
-      width: 220px;      /* largura fixa */
-      height: 160px;     /* altura fixa */
-      object-fit: cover; /* corta sem distorcer */
+      width: 220px;      
+      height: 160px;    
+      object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s;
     }
-
     .galeria img:hover {
       transform: scale(1.05);
     }
 
-    /* RESPONSIVIDADE */
     @media (max-width: 768px) {
       .historia-container {
         flex-direction: column;
         align-items: center;
       }
-
       .card-historia, .card-conhecer {
         text-align: center;
       }
-
       .btns {
         justify-content: center;
       }
-
       .card-conhecer h2 {
         text-align: center;
       }
-
       .galeria img {
         width: 100%;
         max-width: 300px;
@@ -263,7 +238,7 @@
   }
 
   .carousel-container{
-    background: #242424;              /* fundo da seção (ajusta conforme seu site) */
+    background: #242424;             
     padding: 56px 16px;
     text-align: center;
   }
@@ -273,7 +248,6 @@
     font-size: 28px;
   }
   .carousel-container h2 span{ color:#33ad67 }
-
   .carousel{
     position: relative;
     width: 100%;
@@ -283,45 +257,38 @@
     align-items:center;
     justify-content:center;
   }
-
   .carousel-viewport{
     overflow: hidden;
     width:100%;
   }
-
   .carousel-track{
     display:flex;
     align-items:center;
     gap: var(--gap);
     will-change: transform;
-    /* transform será controlado via JS */
   }
-
   .carousel-item{
     flex: 0 0 var(--item-w-desktop);
     height: var(--item-h-desktop);
     border-radius: 12px;
     overflow: hidden;
-    filter: brightness(.38);             /* imagens fora do foco ficam escuras */
+    filter: brightness(.38);            
     transform-origin: center center;
     transition: transform 250ms ease, filter 250ms ease;
     display:flex;
   }
-
   .carousel-item img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
   }
-
   .carousel-item.active{
     transform: scale(1.16);
     filter: brightness(1);
     z-index: 5;
     transition: transform 300ms cubic-bezier(.22,.9,.28,1), filter 300ms ease;
   }
-
   .carousel-button{
     position: absolute;
     top:50%;
@@ -341,11 +308,8 @@
   }
   .carousel-button.prev{ left:8px }
   .carousel-button.next{ right:8px }
-
-  /* esconder borda em touch devices se quiser */
   .carousel-viewport::-webkit-scrollbar{ display:none }
 
-  /* RESPONSIVO */
   @media (max-width: 900px){
     :root{
       --item-w-desktop: 200px;
@@ -358,5 +322,5 @@
       --item-h-desktop: calc(var(--item-w-desktop) * 1.2);
       --gap: 12px;
     }
-    .carousel-button{ display: none } /* no mobile normalmente arrasta com o dedo */
+    .carousel-button{ display: none } 
   }

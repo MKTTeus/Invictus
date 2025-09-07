@@ -6,13 +6,13 @@
     <title>Invictus</title>
     <link rel="icon" href="images/LOGOSite.png" />
     <link rel="stylesheet" href="styles/index.css">
+    <script src="scripts/index.js" defer></script>
 </head>
 <body>
   <header>
     <div class="logo">
       <img src="images/logoInv.png" alt="Logo Invictus">
     </div>
-  
     <nav id="nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -22,7 +22,6 @@
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
-  
     <div style="display: flex; align-items: center;">
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -32,8 +31,6 @@
       <button class="btn-planos" onclick="location.href='planos.html'">Planos</button>
     </div>
   </header>
-  
-
   <section class="hero">
     <div class="hero-overlay"></div> 
     <div class="hero-content">
@@ -42,14 +39,12 @@
       <a href="planos.html" class="btn-matricula">Matricule-se</a>
     </div>
   </section>
-
   <section class="sobre">
     <div class="sobre-imagem">
       <div class="moldura-verde">
         <img src="images/Luta1.png" alt="Lutador" class="img-lutador">
       </div>
     </div>
-
     <div class="sobre-conteudo">
       <span class="destaque">Academia de Muay Thai no centro de Taquaritinga</span>
       <h2>Muay thai é aqui na<br>Invictus Team</h2>
@@ -57,14 +52,5 @@
       <a href="historia.html" class="btn-conheca">Conheça a Invictus</a>
     </div>
   </section>
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const nav = document.getElementById('nav');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      nav.classList.toggle('active');
-    });
-  </script>  
-  
 </body>
 </html>

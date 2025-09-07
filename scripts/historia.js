@@ -6,8 +6,7 @@
    nav.classList.toggle('active');
  });
  
-/* Carrossel infinito com clones (seamless), destaque no centro,
-   touch drag e botões. Funciona com qualquer quantidade de imagens. */
+// Carrossel
 
 (function () {
   const track = document.querySelector('.carousel-track');
@@ -21,27 +20,21 @@
   const origCount = originals.length;
   if (origCount === 0) return;
 
-  // clona TODOS os originais antes e depois (garante loop suave)
   const prependClones = originals.map(el => el.cloneNode(true));
   const appendClones  = originals.map(el => el.cloneNode(true));
 
-  // append & prepend
   appendClones.forEach(n => track.appendChild(n));
   prependClones.slice().reverse().forEach(n => track.insertBefore(n, track.firstChild));
 
-  // recalcular lista completa (originais + clones)
   let items = Array.from(track.children);
   const total = items.length;
 
-  // estados
-  let index = origCount; // começar no primeiro original (depois dos clones prepend)
-  let step = 0;          // passo = itemWidth + gap
-  let centerOffset = 0;  // offset para centralizar item
+  let index = origCount; 
+  let step = 0;       
+  let centerOffset = 0;  
   let isAnimating = false;
 
-  // medidas (recalculadas no resize)
   function calcMeasurements(){
-    // largura do item (já aplicada pelo CSS via var)
     const itemRect = items[0].getBoundingClientRect();
     const gap = parseFloat(getComputedStyle(track).gap) || 0;
     step = Math.round(itemRect.width + gap);
@@ -49,7 +42,6 @@
     centerOffset = Math.round((viewportW - itemRect.width) / 2);
   }
 
-  // aplica transform (animated = true/false)
   function setPosition(animated = true){
     if (animated) track.style.transition = `transform var(--transition)`;
     else track.style.transition = 'none';
@@ -58,31 +50,25 @@
     updateActiveClass();
   }
 
-  // atualizar classe .active (destaque) — usa index atual
   function updateActiveClass(){
     items.forEach(it => it.classList.remove('active'));
-    // protegendo caso index saia do range por microdiferença
     const safeIndex = ((index % total) + total) % total;
     const activeEl = items[safeIndex];
     if (activeEl) activeEl.classList.add('active');
   }
 
-  // corrigir "teleporte" quando passar das cópias (seamless)
   function handleTransitionEnd(){
     isAnimating = false;
-    // se ultrapassou o bloco original na direita
     if (index >= origCount * 2){
       index = index - origCount;
-      setPosition(false); // sem animação (jump)
+      setPosition(false); 
     }
-    // se ultrapassou na esquerda
     if (index < origCount){
       index = index + origCount;
       setPosition(false);
     }
   }
 
-  // next / prev
   function next(){
     if (isAnimating) return;
     isAnimating = true;
@@ -96,7 +82,6 @@
     setPosition(true);
   }
 
-  // touch / drag support (pointer events)
   let pointerDown = false;
   let startX = 0;
   let startOffset = 0;
@@ -105,7 +90,7 @@
     pointerDown = true;
     track.style.transition = 'none';
     startX = (e.touches ? e.touches[0].clientX : e.clientX);
-    // current translateX
+
     const matrix = new WebKitCSSMatrix(getComputedStyle(track).transform);
     startOffset = matrix.m41; // current translateX
     document.addEventListener('pointermove', onPointerMove);
@@ -120,7 +105,7 @@
     const dx = x - startX;
     const newX = startOffset + dx;
     track.style.transform = `translateX(${newX}px)`;
-    // prevent scroll on touch while dragging horizontally
+
     if (Math.abs(dx) > 5 && e.cancelable) e.preventDefault();
   }
 
@@ -132,48 +117,38 @@
     document.removeEventListener('touchmove', onPointerMove);
     document.removeEventListener('touchend', onPointerUp);
 
-    // calcular deslocamento em px desde posição central esperada
     const matrix = new WebKitCSSMatrix(getComputedStyle(track).transform);
     const currentX = matrix.m41;
     const expectedX = -index * step + centerOffset;
     const delta = currentX - expectedX;
 
-    const threshold = step * 0.25; // se mover mais que 25% do passo -> troca
+    const threshold = step * 0.25; 
     if (delta > threshold) {
-      // moved right -> prev
       prev();
     } else if (delta < -threshold) {
       next();
     } else {
-      // volta pra posição
       setPosition(true);
       isAnimating = true;
     }
   }
 
-  // listeners
   nextBtn.addEventListener('click', next);
   prevBtn.addEventListener('click', prev);
   track.addEventListener('transitionend', handleTransitionEnd);
-  // pointer down on viewport (touch / mouse)
   viewport.addEventListener('pointerdown', onPointerDown);
   viewport.addEventListener('touchstart', onPointerDown, {passive:false});
 
-  // resize handler
   window.addEventListener('resize', () => {
-    // recalcula medidas e reposiciona sem animação
     calcMeasurements();
     setPosition(false);
   });
 
-  // inicialização
   calcMeasurements();
-  items = Array.from(track.children); // atualizar caso o browser tenha reflow
+  items = Array.from(track.children); 
   setPosition(false);
-  // garantir destaque inicial
   updateActiveClass();
 
-  // opcional: autoplay (descomente se quiser)
   let autoplayId = setInterval(next, 3500);
   viewport.addEventListener('mouseenter', () => clearInterval(autoplayId));
   viewport.addEventListener('mouseleave', () => autoplayId = setInterval(next, 3500));
