@@ -126,7 +126,7 @@
       margin-bottom: 15px;
     }
     .card-historia h2 span {
-      color: #33ad67;
+      color: #28a745;
     }
     .card-historia p {
       font-size: 16px;
@@ -139,7 +139,7 @@
       flex-wrap: wrap;
     }
     .btns a {
-      background-color: #33ad67;
+      background-color: #28a745;
       color: #fff;
       padding: 10px 20px;
       border-radius: 25px;
@@ -164,7 +164,7 @@
       font-size: 24px;
     }
     .card-conhecer h2 span {
-      color: #33ad67;
+      color: #28a745;
     }
     .card-conhecer p {
       margin-bottom: 15px;
@@ -188,7 +188,7 @@
       margin-bottom: 30px;
     }
     .espaco-container h2 span {
-      color: #33ad67;
+      color: #28a745;
     }
 
     .galeria {
@@ -247,7 +247,9 @@
     margin: 0 0 22px;
     font-size: 28px;
   }
-  .carousel-container h2 span{ color:#33ad67 }
+  .carousel-container h2 span{ 
+    color:#28a745 
+  }
   .carousel{
     position: relative;
     width: 100%;
