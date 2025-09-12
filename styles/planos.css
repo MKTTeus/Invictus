@@ -141,20 +141,21 @@
   transform: translateX(0); 
   transition: transform 0.5s ease; 
 }
- .panel { 
-  flex: 0 0 100%; 
+.panel {
+  flex: 0 0 100%;
   display: flex;
   gap: 2rem;
-  justify-content: center; 
-  align-items: stretch; 
+  justify-content: center;
+  align-items: flex-start;
   padding: 0.5rem 0.75rem 2rem;
-  flex-wrap: wrap; }
-
- .plan-card { 
-  width: 250px; 
+  flex-wrap: wrap;
+}
+.plan-card {
+  width: 280px;         
+  min-height: 380px;     
   background-color: #151515; 
   border-radius: 0.8rem; 
-  padding: 1.8rem 1.6rem 2rem 2.2rem; 
+  padding: 2rem 1.8rem 2.2rem 2.4rem; 
   box-shadow: 0 0 18px 2px #00f87f66; 
   border-left: 0.8rem solid #00f87f; 
   display: flex; 
@@ -164,27 +165,31 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
  .plan-card:hover { 
-  transform: translateY(-8px);
-   box-shadow: 0 0 24px 4px #00f87f99; 
+    transform: translateY(-8px);
+    box-shadow: 0 0 24px 4px #00f87f99; 
   }
  .plan-card h2 { 
-  font-weight: 700; 
-  font-size: 1.75rem; 
-  color: #3cd07b; 
-  margin-bottom: 0.6rem; 
+    font-weight: 700; 
+    font-size: 1.85rem; 
+    color: #3cd07b; 
+    margin-bottom: 0.6rem; 
+}
+.plan-card h2 .unidade {
+  font-size: 1rem;      /* menor que o valor */
+  font-weight: 400;     /* mais leve */
+  color: #bdbdbd;       /* cinza para contraste */
+  margin-left: 4px;     /* espaço depois do preço */
 }
  .plan-card .lessons { 
-  font-weight: 600; 
-  font-size: 1.15rem; 
-  margin-bottom: 0.35rem; 
+    font-weight: 600; 
+    font-size: 1.2rem; 
+    margin-bottom: 0.5rem; 
 }
  .plan-card .description { 
-  font-weight: 400; 
-  font-size: 0.98rem; 
-  color: #bdbdbd;
-  line-height: 1.5; 
-  white-space: pre-wrap; 
-
+    font-weight: 400; 
+    font-size: 1rem; 
+    color: #bdbdbd;
+    line-height: 1.5; 
 }
 
  @media (max-width: 720px) {
@@ -197,8 +202,20 @@
      min-width: 120px; 
     }
    .plan-card { 
-    width: 210px; 
-    padding-left: 1.6rem; 
-    padding-right: 1.2rem; 
+      width: 230px;      /* reduz largura */
+      min-height: 220px; /* altura proporcional */
+      padding: 1.6rem 1.2rem 2rem 1.6rem; 
+  }
+  .plan-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .plan-card .lessons {
+    font-size: 1.05rem;
+  }
+
+  .plan-card .description {
+    font-size: 0.9rem;
   }
  }
+
