@@ -9,9 +9,13 @@
  // === HORARIOS ===
  const horariosModalidades = {
    'muay-thai-kids': { nome: 'Muay Thai - Kids', horarios: { 'Terça': ['17:00'], 'Quinta': ['17:00'] } },
-   'muay-thai-misto': { nome: 'Muay Thai - Misto', horarios: { 'Segunda': ['07:00','08:00','16:00','18:00'], 'Terça': ['07:00','08:00','16:00','18:00'], 'Quarta': ['07:00','08:00','16:00','18:00'], 'Quinta': ['07:00','08:00','16:00','18:00'], 'Sexta': ['07:00','08:00','16:00','18:00'] } },
-   'muay-thai-feminino': { nome: 'Muay Thai - Feminino', horarios: { 'Segunda': ['09:00','15:00','17:00','19:00'], 'Terça': ['15:00','19:00'], 'Quarta': ['09:00','15:00','17:00','19:00'], 'Quinta': ['09:00','15:00','19:00'], 'Sexta': ['09:00','15:00','17:00','19:00'] } },
+
+   'muay-thai-misto': { nome: 'Muay Thai - Misto', horarios: { 'Segunda': ['09:00','15:00','17:00','19:00'], 'Terça': ['15:00','19:00'], 'Quarta': ['09:00','15:00','17:00','19:00'], 'Quinta': ['09:00','15:00','19:00'], 'Sexta': ['09:00','15:00','17:00','19:00'] } },
+
+   'muay-thai-feminino': { nome: 'Muay Thai - Feminino', horarios: { 'Segunda': ['07:00','08:00','16:00','18:00'], 'Terça': ['07:00','08:00','16:00','18:00'], 'Quarta': ['07:00','08:00','16:00','18:00'], 'Quinta': ['07:00','08:00','16:00','18:00'], 'Sexta': ['07:00','08:00','16:00','18:00'] } },
+
    'jiu-jitsu': { nome: 'Jiu Jitsu', horarios: { 'Segunda': ['20:00'], 'Quarta': ['20:00'], 'Sexta': ['20:00'] } },
+
    'individual': { nome: 'Treino Individual', horarios: { 'Segunda': ['Consultar disponibilidade'], 'Terça': ['Consultar disponibilidade'], 'Quarta': ['Consultar disponibilidade'], 'Quinta': ['Consultar disponibilidade'], 'Sexta': ['Consultar disponibilidade'] } }
  };
 
