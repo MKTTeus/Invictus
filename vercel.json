@@ -1,0 +1,29 @@
+{
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/historia.html",
+      "destination": "/"
+    },
+    {
+      "source": "/modalidades.html",
+      "destination": "/"
+    },
+    {
+      "source": "/horarios.html",
+      "destination": "/"
+    },
+    {
+      "source": "/planos.html",
+      "destination": "/"
+    },
+    {
+      "source": "/contato.html",
+      "destination": "/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
