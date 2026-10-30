@@ -1,29 +1,33 @@
 {
-  "framework": "vite",
-  "rewrites": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "trailingSlash": true,
+  "cleanUrls": true,
+  "redirects": [
     {
       "source": "/historia.html",
-      "destination": "/"
+      "destination": "/sobre/",
+      "permanent": true
     },
     {
       "source": "/modalidades.html",
-      "destination": "/"
+      "destination": "/modalidades/",
+      "permanent": true
     },
     {
       "source": "/horarios.html",
-      "destination": "/"
+      "destination": "/horarios/",
+      "permanent": true
     },
     {
       "source": "/planos.html",
-      "destination": "/"
+      "destination": "/planos/",
+      "permanent": true
     },
     {
       "source": "/contato.html",
-      "destination": "/"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/contato/",
+      "permanent": true
     }
   ]
 }
